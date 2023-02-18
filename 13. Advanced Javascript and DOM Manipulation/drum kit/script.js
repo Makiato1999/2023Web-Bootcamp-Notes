@@ -1,29 +1,30 @@
 var numOfButtons = document.querySelectorAll(".drum").length;
-var flash = false;
+// var flash = false;
 
 for (let index = 0; index < numOfButtons; index++) {
     document.querySelectorAll(".drum")[index].addEventListener("click", function(event) {
-        //alert("you click on "+document.querySelectorAll(".drum")[index].className);
-        if (flash) {
+        /*if (flash) {
             this.style.color = "rgba(252, 24, 13)";
         } else {
             this.style.color = "";
-        }
+        }*/
         let key = this.innerHTML;
         makeSoundByButton(key);
-        flash = !flash;
+        buttonAnimation(key);
+        // flash = !flash;
     });
 }
 
 document.addEventListener("keypress", function(event) {
     let button = document.getElementsByClassName(event.key);
-    if (flash) {
+    /*if (flash) {
         button[0].style.color = "rgba(252, 24, 13)";
     } else {
         button[0].style.color = "";
-    }
+    }*/
     makeSoundByButton(event.key);
-    flash = !flash;
+    buttonAnimation(event.key);
+    // flash = !flash;
 });
 
 function makeSoundByButton(key) {
@@ -50,8 +51,17 @@ function makeSoundByButton(key) {
             path = "sounds/kick-bass.mp3";
             break;
         default:
+            path = "";
             break;
     }
     var audio = new Audio(path);
     audio.play();
+}
+
+function buttonAnimation(key) {
+    let button = document.querySelector("."+key);
+    button.classList.add("pressed");
+    setTimeout(() => {
+        button.classList.remove("pressed");
+    }, 100);
 }
