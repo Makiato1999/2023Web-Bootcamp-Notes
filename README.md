@@ -7,7 +7,8 @@ _provided by Meta & Coursera_
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
    - normal function, on the other hand, is invoked directly by its name and can return a value or modify the state of the program in some way
    - callback function is typically used when you want to perform some action after a certain event has occurred, such as when an asynchronous operation (like a database query or an HTTP request) completes. You can pass a callback function to the asynchronous function, and it will be called when the operation finishes. This is often referred to as "callback-based programming."
-   - ```
+   - callback function example:
+     ```
      function fetchData(callback) {
      // Asynchronous operation, like fetching data from a server
      // ...
