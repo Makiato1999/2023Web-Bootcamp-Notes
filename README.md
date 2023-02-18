@@ -23,3 +23,15 @@ _provided by Meta & Coursera_
      fetchData(processData); // Outputs: "Received data: { id: 1, name: 'John' }"
      ```
 2. anonymous functions are often used when you need to pass a function as an argument to another function, like in the case of a callback function
+   - example
+     ```
+     function add(a, b, callback) {
+         let result = a + b;
+         callback(result);
+     }
+
+     add(2, 3, function(result) {
+         console.log(result);
+     });
+     ```
+4. 
