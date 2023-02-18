@@ -34,5 +34,5 @@ _provided by Meta & Coursera_
          console.log(result);
      });
      ```
-3. document.querySelector
+3. document.querySelector()
    -  select the first element within a document that matches a specified CSS selector. If you want to select all elements that match a selector, you can use querySelectorAll() instead.
