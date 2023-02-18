@@ -12,11 +12,11 @@ _provided by Meta & Coursera_
      // Asynchronous operation, like fetching data from a server
      // ...
      let data = { id: 1, name: "John" };
-     callback(data);
+         callback(data);
      }
 
      function processData(data) {
-        console.log("Received data:", data);
+         console.log("Received data:", data);
      }
 
      fetchData(processData); // Outputs: "Received data: { id: 1, name: 'John' }"
