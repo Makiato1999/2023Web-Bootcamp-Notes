@@ -57,3 +57,8 @@ footer {
     margin: 5px;
     background-color: rgb(226, 200, 200);
 }
+
+.pressed {
+    box-shadow: 0 3px 4px 0 #6a5353;
+    opacity: 0.5;
+}
