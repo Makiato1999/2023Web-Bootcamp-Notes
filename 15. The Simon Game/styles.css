@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+    background-color: rgb(177, 210, 235);
+}
+
+h1 {
+    color: rgb(73, 109, 243);
+    text-shadow: 2px 2px black;
+    font-size: 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    display: block;
+    width: 50%;
+    margin: auto auto;
+}
+
+.btn {
+    margin: 20px 20px;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+    border-radius: 20%;
+}
+
+.red {
+    background-color: rgb(205, 74, 74);
+}
+.green {
+    background-color: rgb(115, 185, 115);
+}
+.blue {
+    background-color: rgb(95, 95, 226);
+}
+.yellow {
+    background-color: rgb(243, 243, 127);
+}
