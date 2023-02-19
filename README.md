@@ -2,6 +2,7 @@
 _provided by Meta & Coursera_
 #### Table of Contents
 1. [Advanced Javascript and DOM Manipulation](#anchor_13)<br/>
+2. [jQuery](#anchor_14)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -36,3 +37,5 @@ _provided by Meta & Coursera_
      ```
 3. document.querySelector()
    -  select the first element within a document that matches a specified CSS selector. If you want to select all elements that match a selector, you can use querySelectorAll() instead.
+## jQuery<a name="anchor_14"></a>
+1. download jQuery by searching 'jQuery', then find 'Using jQuery with a CDN'
