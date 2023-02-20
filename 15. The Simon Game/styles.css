@@ -42,3 +42,8 @@ h1 {
     box-shadow: 0 0 10px;
     background-color: rgb(175, 175, 175);
 }
+
+.game-over {
+    text-align: center;
+    background-color: rgb(255, 128, 128);
+}
