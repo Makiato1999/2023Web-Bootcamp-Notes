@@ -51,4 +51,14 @@ _provided by Meta & Coursera_
    let element = document.getElementById('myElement');
    element.classList.remove('myClass');
    ```
-3. 
+3. pressed(keyboard/mouse click) animate, 100ms
+   ```
+   function animatePress(key) {
+      let id = "#"+key;
+      $(id).addClass("pressed");
+      setTimeout(() => {
+         $(id).removeClass("pressed");
+      }, 100);
+   }
+   ```
+4. 
