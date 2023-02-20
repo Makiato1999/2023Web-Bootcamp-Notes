@@ -1,48 +1,69 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
+var randomChosenColour;
 var gamePattern = [];
 var userClickedPattern = [];
 
+
 function nextSequence() {
     let randomNumber = Math.floor(Math.random() * 4);
-    return randomNumber;
+    randomChosenColour = buttonColours[randomNumber]
+    // playSound(randomChosenColour);
+    gamePattern.push(randomChosenColour);
 }
 
-var randomChosenColour = buttonColours[nextSequence()];
-gamePattern.push(randomChosenColour);
-gamePattern.push(randomChosenColour);
-gamePattern.push(randomChosenColour);
-gamePattern.push(randomChosenColour);
+nextSequence();
+nextSequence();
+nextSequence();
+nextSequence();
 
+console.log(gamePattern);
+/*
+var ifLocked = true;
 // flash the relevent color button
 for (let i = 0; i < gamePattern.length; i++) {
     let className = "."+gamePattern[i];
-    $(className).animate({
-        opacity: 0,
-    }, 10).animate({
-        opacity: 1
-    });
+    if (ifLocked) {
+        ifLocked = false;
+        console.log(className);
+        $(className).animate({
+            opacity: 0,
+        }, 500).animate({
+            opacity: 1
+        }, 500);
+        setTimeout(() => {
+            ifLocked = true;
+        }, 1000);
+    }
+}*/
+var ifLocked = true;
+let counter = 0;
+while (counter < gamePattern.length) {
+    console.log(counter);
+    let className = "."+gamePattern[counter];
+    if (ifLocked) {
+        ifLocked = false;
+        console.log(className);
+        $(className).animate({
+            opacity: 0,
+        }, 500).animate({
+            opacity: 1
+        }, 500);
+        setTimeout(() => {
+            counter ++;
+            ifLocked = true;
+        }, 1000);
+    }
 }
 
 // play sounds
 $(".btn").click(function (e) { 
-    e.preventDefault();
     let clickedElement = e.target;// which includes class, id, etc.
     let userChosenColour = clickedElement.id;
-    var audio = new Audio('sounds/'+userChosenColour+'.mp3');
-    audio.play();
+    playSound(userChosenColour);
     userClickedPattern.push(userChosenColour);
-    console.log(userClickedPattern);
 });
-/*
-function handle(color) {
-    $("."+color).click(function (e) { 
-        e.preventDefault();
-        var audio = new Audio('sounds/'+color+'.mp3');
-        audio.play();
-    });
+
+function playSound(name) {
+    var audio = new Audio('sounds/'+name+'.mp3');
+    audio.play();
 }
-handle("red");
-handle("green");
-handle("blue");
-handle("yellow");
-*/
