@@ -39,3 +39,16 @@ _provided by Meta & Coursera_
    -  select the first element within a document that matches a specified CSS selector. If you want to select all elements that match a selector, you can use querySelectorAll() instead.
 ## jQuery<a name="anchor_14"></a>
 1. download jQuery by searching 'jQuery', then find 'Using jQuery with a CDN'
+   ```
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   ```
+2. remove class in jQuery
+   ```
+   $('#myElement').removeClass('myClass');
+   ```
+   remove class in JS
+   ```
+   let element = document.getElementById('myElement');
+   element.classList.remove('myClass');
+   ```
+3. 
