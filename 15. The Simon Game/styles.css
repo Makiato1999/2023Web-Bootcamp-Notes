@@ -37,3 +37,8 @@ h1 {
 .yellow {
     background-color: rgb(243, 243, 127);
 }
+
+.pressed {
+    box-shadow: 0 0 10px;
+    background-color: rgb(175, 175, 175);
+}

@@ -1,48 +1,51 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
+var randomChosenColour;
 var gamePattern = [];
 var userClickedPattern = [];
+var ifStarted = false;
+var level = 0;
+
+$(document).keypress(function() {
+    if (!ifStarted) {
+        ifStarted = true;
+        nextSequence();
+    }
+});
 
 function nextSequence() {
     let randomNumber = Math.floor(Math.random() * 4);
-    return randomNumber;
-}
-
-var randomChosenColour = buttonColours[nextSequence()];
-gamePattern.push(randomChosenColour);
-gamePattern.push(randomChosenColour);
-gamePattern.push(randomChosenColour);
-gamePattern.push(randomChosenColour);
-
-// flash the relevent color button
-for (let i = 0; i < gamePattern.length; i++) {
-    let className = "."+gamePattern[i];
-    $(className).animate({
+    randomChosenColour = buttonColours[randomNumber]
+    gamePattern.push(randomChosenColour);
+    // flash the relevent color button
+    let id = "#"+randomChosenColour;
+    $(id).animate({
         opacity: 0,
-    }, 10).animate({
+    }, 500).animate({
         opacity: 1
-    });
+    }, 500);
+    playSound(randomChosenColour);
 }
 
-// play sounds
 $(".btn").click(function (e) { 
-    e.preventDefault();
     let clickedElement = e.target;// which includes class, id, etc.
     let userChosenColour = clickedElement.id;
-    var audio = new Audio('sounds/'+userChosenColour+'.mp3');
-    audio.play();
     userClickedPattern.push(userChosenColour);
-    console.log(userClickedPattern);
+
+    playSound(userChosenColour);
+
+    animatePress(userChosenColour);
 });
-/*
-function handle(color) {
-    $("."+color).click(function (e) { 
-        e.preventDefault();
-        var audio = new Audio('sounds/'+color+'.mp3');
-        audio.play();
-    });
+
+// play sounds
+function playSound(name) {
+    var audio = new Audio('sounds/'+name+'.mp3');
+    audio.play();
 }
-handle("red");
-handle("green");
-handle("blue");
-handle("yellow");
-*/
+// press button animate
+function animatePress(currentColour) {
+    let id = "#"+currentColour;
+    $(id).addClass("pressed");
+    setTimeout(() => {
+        $(id).removeClass("pressed");
+    }, 100);
+}
