@@ -1,5 +1,5 @@
 # The Complete 2023 Web Development Bootcamp
-_provided by Meta & Coursera_
+_provided by Dr. Angela Yu on Udemy platform_
 #### Table of Contents
 1. [Advanced Javascript and DOM Manipulation](#anchor_13)<br/>
 2. [jQuery](#anchor_14)<br/>
