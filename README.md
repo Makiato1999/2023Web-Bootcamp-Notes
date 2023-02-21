@@ -103,3 +103,13 @@ _provided by Meta & Coursera_
    Is this OK? (yes) yes
    ```
 2. package.json
+3. my node js installation pathway
+   - find the path
+     ```
+     which node
+     ```
+   - unintall node js by
+     ```
+     sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}
+     ```
+4. sss
