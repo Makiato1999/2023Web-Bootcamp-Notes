@@ -115,7 +115,7 @@ _provided by Meta & Coursera_
      ```
 ## Express.js with Node.js<a name="anchor_19"></a>
 1. how to initilize project and install express.js
-   - firstly, create the root folder and js file, such as ```mkdir my-server```, then ```touch server.js```
+   - firstly, create the package and js file, such as ```mkdir my-express-server```, then ```touch server.js```
    - then 
      ```
      xiexiaoran@wpa-6-563 my-express-server % npm init
