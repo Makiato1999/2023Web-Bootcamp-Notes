@@ -156,4 +156,6 @@ _provided by Dr. Angela Yu on Udemy platform_
 
      Is this OK? (yes) yes
      ```
-2. sss
+   - then install express by ```npm install express```
+   - after compelting above commands, the package will be updated
+2. ssss
