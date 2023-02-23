@@ -162,4 +162,4 @@ _provided by Dr. Angela Yu on Udemy platform_
    - install package ```npm install body-parser```
    - when we parese the request by ```request.body.name1```, the ```.name1``` which is bound to the name tag in corresponded html, such as ```<input type="text" name="input1" placeholder="first input">```
 3. issues
-   - when i put ```<script src="game.js" charset="UTF-8"></script>``` in home(root) html, i got error ```Refused to execute script from 'http://localhost:3000/calculator.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.```, fixed by deleting this line since the we already link the js on server 
+   - when i put ```<script src="calculator.js" charset="UTF-8"></script>``` in home(root) html, i got error ```Refused to execute script from 'http://localhost:3000/calculator.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.```, fixed by deleting this line since the we already link the js on server 
