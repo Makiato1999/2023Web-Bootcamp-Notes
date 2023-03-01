@@ -5,6 +5,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 2. [jQuery](#anchor_14)<br/>
 3. [Node.js](#anchor_18)<br/>
 4. [Express.js with Node.js](#anchor_19)<br/>
+5. [API](#anchor_20)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -163,3 +164,8 @@ _provided by Dr. Angela Yu on Udemy platform_
    - when we parese the request by ```request.body.name1```, the ```.name1``` which is bound to the name tag in corresponded html, such as ```<input type="text" name="input1" placeholder="first input">```
 3. issues
    - when i put ```<script src="calculator.js" charset="UTF-8"></script>``` in home(root) html, i got error ```Refused to execute script from 'http://localhost:3000/calculator.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.```, fixed by deleting this line since we already linked js on server 
+## API<a name="anchor_20"></a>
+1. tools
+   - JSON view pro, google extension
+   - Postman, good for url
+2. 
