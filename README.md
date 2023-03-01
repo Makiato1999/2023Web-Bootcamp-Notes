@@ -169,7 +169,7 @@ _provided by Dr. Angela Yu on Udemy platform_
    - JSON view pro, google extension
    - Postman, good for url
 2. parse JSON by http
-   - 
+   - example
      ```
      const express = require("express");
      const https = require("https");
