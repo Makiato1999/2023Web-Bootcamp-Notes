@@ -192,4 +192,19 @@ _provided by Dr. Angela Yu on Udemy platform_
          })；
      })；
      ```
-3. qqq
+3. Newsletter
+   - deal with static folder
+      ```
+      const app = express();
+      app.use(express.static("public"));
+      ```
+   - html input in form should have name
+      ```
+      <form action="/" method="post">
+         <label id="cityInput">City name: </label>
+         <input id="cityInput" type="text" name="cityName">
+         <button type="submit">Submit</button>
+      </form>
+      ```
+   - ccc
+4. xxx
