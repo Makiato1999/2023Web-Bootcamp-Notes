@@ -181,15 +181,9 @@ _provided by Dr. Angela Yu on Udemy platform_
                console.log("statusCode: "+response.statusCode);
                console.log("headers: "+response.headers);
                response.on("data", (data)=>{
-                     const weatherData = JSON.parse(data);
-                     const object = {
-                           name: "Shawn",
-                           age: 23
-                     }
-               console.log(JSON.stringify(object));
-               console.log(weatherData.main.temp);
-               const weatherDesciption = weatherData.weather[0].description;
-               console.log(weatherDesciption);
+                  console.log(weatherData.main.temp);
+                  const weatherDesciption = weatherData.weather[0].description;
+                  console.log(weatherDesciption);
                });
      });
      res.send("Server is up and running");
