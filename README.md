@@ -206,5 +206,8 @@ _provided by Dr. Angela Yu on Udemy platform_
          <button type="submit">Submit</button>
       </form>
       ```
-   - ccc
+   - since this site is hard to explore(for my views XD)
+      - how to find [API key](https://us21.admin.mailchimp.com/account/api/)
+      - how to find [unique id](https://us21.admin.mailchimp.com/lists/settings/defaults?id=7793)
+      - how to find [url](https://mailchimp.com/developer/marketing/docs/fundamentals/#connecting-to-the-api)
 4. xxx
