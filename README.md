@@ -208,6 +208,35 @@ _provided by Dr. Angela Yu on Udemy platform_
       ```
    - since this site is hard to explore(for my views XD)
       - how to find [API key](https://us21.admin.mailchimp.com/account/api/)
+         - once API key is exposed, this current API key will be revoked
       - how to find [unique id](https://us21.admin.mailchimp.com/lists/settings/defaults?id=7793)
       - how to find [url](https://mailchimp.com/developer/marketing/docs/fundamentals/#connecting-to-the-api)
-4. xxx
+4. server: Heroku
+   - how to install
+      - follow by this [instruction](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+      - issue
+         - homebrew version is too old?
+            ```
+            ==> Installing heroku from heroku/brew
+            Error: Your Command Line Tools are too outdated.
+            Update them from Software Update in System Preferences.
+            ```
+         - fix it by this [instruction](https://coady.tech/macos-command-line-tools-outdated/)
+            ```
+            sudo rm -rf /Library/Developer/CommandLineTools 
+            sudo xcode-select --install 
+            ```
+      - issue
+         - I deleted docker recently, and i guess there are still some remaining files or problems
+            ```
+            Error: Permission denied @ apply2files - /usr/local/lib/docker/cli-plugins
+            ```
+         - fix it by this [instruction](https://flaviocopes.com/homebrew-fix-permission-denied-apply2files/)
+            ```
+            mkdir -p /Applications/Docker.app/Contents/Resources/cli-plugins
+
+            brew cleanup
+            ```
+   - start
+5. zzz
+
