@@ -31,7 +31,7 @@ app.post("/", (req, res)=>{
                 }
             }
         ]
-    }
+    };
     var jsonData = JSON.stringify(data);
 
     // 
@@ -67,8 +67,7 @@ app.listen(process.env.PORT || 3000, ()=>{
 /* local host
 app.listen(3000, ()=>{
     console.log("Server is running on port 3000");
-});
-/*
+});*/
 
 // API key
 // a01824420cf3852b4b631aae759d4571-us21
