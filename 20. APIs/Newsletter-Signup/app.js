@@ -34,10 +34,14 @@ app.post("/", (req, res)=>{
     };
     var jsonData = JSON.stringify(data);
 
-    // 
+    // more details you should read mailchimp api document for list reference
     const url = "https://us21.api.mailchimp.com/3.0/lists/4f95bf79ea";
     const options = {
         method:"POST",
+        // since once the api key is revealed, it will be revoked
+        // so you need to get a new api key if you want to make this app run 
+        // api key
+        // for example: auth:"shawn:APIkey"
         auth:"shawn:a6d9cb558953b721152aba2e75939836-us21"
     };
 
@@ -70,6 +74,6 @@ app.listen(3000, ()=>{
 });*/
 
 // API key
-// a01824420cf3852b4b631aae759d4571-us21
+// get a new one if u want to make this app run
 // unique id for Shawn
 // 4f95bf79ea
