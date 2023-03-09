@@ -245,5 +245,6 @@ _provided by Dr. Angela Yu on Udemy platform_
          ```git push heroku master```
       - logs, more details can be found on heroku documents
 ## Version Control<a name="anchor_21"></a>
-1. working directory / staging area / local repository
-2. sss
+1. working directory --```git add .```-> staging area --```git commit -m "update"```-> local repository
+   - restore
+2. eee
