@@ -6,6 +6,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 3. [Node.js](#anchor_18)<br/>
 4. [Express.js with Node.js](#anchor_19)<br/>
 5. [API](#anchor_20)<br/>
+6. [Version Control](#anchor_21)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -237,6 +238,12 @@ _provided by Dr. Angela Yu on Udemy platform_
 
             brew cleanup
             ```
-   - start
-5. zzz
-
+   - deploy the app 
+      - before initializing heroku, checking the local git repositery first
+         - since i create this app in a folder on my desktop, i initialize the git repositery by ```git init```, then use ```git add .``` and ```git commit -m "update pic and title"```
+      - then push to heroku server
+         ```git push heroku master```
+      - logs, more details can be found on heroku documents
+## Version Control<a name="anchor_21"></a>
+1. working directory / staging area / local repository
+2. sss
