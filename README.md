@@ -247,4 +247,5 @@ _provided by Dr. Angela Yu on Udemy platform_
 ## Version Control<a name="anchor_21"></a>
 1. working directory --```git add .```-> staging area --```git commit -m "update"```-> local repository
    - restore last commit by ```git checkout filename```
-2. eee
+2. use ```git log``` to check all commits
+3. sss
