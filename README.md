@@ -246,5 +246,5 @@ _provided by Dr. Angela Yu on Udemy platform_
       - logs, more details can be found on heroku documents
 ## Version Control<a name="anchor_21"></a>
 1. working directory --```git add .```-> staging area --```git commit -m "update"```-> local repository
-   - restore
+   - restore last commit by ```git checkout filename```
 2. eee
