@@ -7,6 +7,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 4. [Express.js with Node.js](#anchor_19)<br/>
 5. [API](#anchor_20)<br/>
 6. [Version Control](#anchor_21)<br/>
+7. [EJS (Embedded JavaScript)](#anchor_22)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -262,4 +263,6 @@ _provided by Dr. Angela Yu on Udemy platform_
    - check current branch by ```git branch```
    - switch branch by ```git checkout branchName```
    - merge branch, first switch to the branch you won't keep, then ```git merge anotherBranchName```
-5. nnn
+5. forking and pull request
+## EJS (Embedded JavaScript)<a name="anchor_22"></a>
+1. cxcxc
