@@ -264,5 +264,7 @@ _provided by Dr. Angela Yu on Udemy platform_
    - switch branch by ```git checkout branchName```
    - merge branch, first switch to the branch you won't keep, then ```git merge anotherBranchName```
 5. forking and pull request
+   - A fork B repository, A is only avalibale to update A local forked repository, if A want to update B repository, A needs to create pull request
+   - B can review the pull request which other programmers created, and B has access and B can make decision
 ## EJS (Embedded JavaScript)<a name="anchor_22"></a>
 1. cxcxc
