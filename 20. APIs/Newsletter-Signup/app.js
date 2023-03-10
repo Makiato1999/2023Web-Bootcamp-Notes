@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
+//import config file
+const { APIkey } = require('./config.js');
 
 const app = express();
 app.use(express.static("public"));
@@ -42,7 +44,7 @@ app.post("/", (req, res)=>{
         // so you need to get a new api key if you want to make this app run 
         // api key
         // for example: auth:"shawn:APIkey"
-        auth:"shawn:a6d9cb558953b721152aba2e75939836-us21"
+        auth:"shawn:"+APIkey
     };
 
     const request = https.request(url, options, (response)=>{
@@ -74,6 +76,6 @@ app.listen(3000, ()=>{
 });*/
 
 // API key
-// get a new one if u want to make this app run
+// save in config.js
 // unique id for Shawn
 // 4f95bf79ea

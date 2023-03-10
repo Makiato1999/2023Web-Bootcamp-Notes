@@ -1,0 +1,4 @@
+.DS_store
+# since once api key is revealed, it will be revoked, so we need to hide it
+# which means we cannot add it to staging area and push it
+config.js
