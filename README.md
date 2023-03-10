@@ -261,5 +261,5 @@ _provided by Dr. Angela Yu on Udemy platform_
    - create new branch by ```git branch branchName```
    - check current branch by ```git branch```
    - switch branch by ```git checkout branchName```
-   - merge branch, first switch to the branch you won't keep, then ```git merge aimBranchName```
+   - merge branch, first switch to the branch you won't keep, then ```git merge anotherBranchName```
 5. nnn
