@@ -257,4 +257,9 @@ _provided by Dr. Angela Yu on Udemy platform_
       - restore, roll back to last commit results
 3. what is ".gitignore"
    - .gitignore is a file used by the version control system Git to specify which files and directories should be excluded from version control. It allows you to specify patterns for files and directories that you want Git to ignore when you add, commit, or push changes to a repository.
-4. xxx
+4. branch
+   - create new branch by ```git branch branchName```
+   - check current branch by ```git branch```
+   - switch branch by ```git checkout branchName```
+   - merge branch, first switch to the branch you won't keep, then ```git merge aimBranchName```
+5. nnn
