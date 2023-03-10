@@ -248,7 +248,11 @@ _provided by Dr. Angela Yu on Udemy platform_
 1. use ```git log``` to check all commits
 2. commands
    - working directory --```git add .```-> staging area
+      - add all files in staging area
    - working directory <--```git rm --cached -r .```-- staging area
-   - staging area --```git commit -m "any message"```-> local repository
-   - restore last commit by using ```git checkout filename```
+      - remove all files in staging area
+   - staging area --```git commit -m "any message"```--> local repository
+      - commit all files in staging area to local repository
+   - staging area <--```git checkout filename```-- local repository
+      - restore, roll back to last commit results
 3. sss
