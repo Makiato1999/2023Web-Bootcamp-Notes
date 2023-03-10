@@ -245,5 +245,14 @@ _provided by Dr. Angela Yu on Udemy platform_
          ```git push heroku master```
       - logs, more details can be found on heroku documents
 ## Version Control<a name="anchor_21"></a>
-1. working directory / staging area / local repository
-2. sss
+1. use ```git log``` to check all commits
+2. commands
+   - working directory --```git add .```-> staging area
+      - add all files in staging area
+   - working directory <--```git rm --cached -r .```-- staging area
+      - remove all files in staging area
+   - staging area --```git commit -m "any message"```--> local repository
+      - commit all files in staging area to local repository
+   - staging area <--```git checkout filename```-- local repository
+      - restore, roll back to last commit results
+3. sss
