@@ -255,4 +255,6 @@ _provided by Dr. Angela Yu on Udemy platform_
       - commit all files in staging area to local repository
    - staging area <--```git checkout filename```-- local repository
       - restore, roll back to last commit results
-3. sss
+3. what is ".gitignore"
+   - .gitignore is a file used by the version control system Git to specify which files and directories should be excluded from version control. It allows you to specify patterns for files and directories that you want Git to ignore when you add, commit, or push changes to a repository.
+4. xxx
