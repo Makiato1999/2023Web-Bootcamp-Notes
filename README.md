@@ -239,6 +239,12 @@ _provided by Dr. Angela Yu on Udemy platform_
 
             brew cleanup
             ```
+   - login, create app, define a Procfile
+      - first ```heroku login```, verify passwords
+      - then create app by ```heroku create```
+      - define a Procfile, follow the [instruction](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile)
+         - create a file called ```Procfile``` on root directory
+         - write ```web: npm start``` in Procfile
    - deploy the app 
       - before initializing heroku, checking the local git repositery first
          - since i create this app in a folder on my desktop, i initialize the git repositery by ```git init```, then use ```git add .``` and ```git commit -m "update pic and title"```
