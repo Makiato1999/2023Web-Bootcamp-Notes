@@ -7,6 +7,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 4. [Express.js with Node.js](#anchor_19)<br/>
 5. [API](#anchor_20)<br/>
 6. [Version Control](#anchor_21)<br/>
+7. [EJS (Embedded JavaScript)](#anchor_22)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -238,6 +239,12 @@ _provided by Dr. Angela Yu on Udemy platform_
 
             brew cleanup
             ```
+   - login, create app, define a Procfile
+      - first ```heroku login```, verify passwords
+      - then create app by ```heroku create```
+      - define a Procfile, follow the [instruction](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile)
+         - create a file called ```Procfile``` on root directory
+         - write ```web: npm start``` in Procfile
    - deploy the app 
       - before initializing heroku, checking the local git repositery first
          - since i create this app in a folder on my desktop, i initialize the git repositery by ```git init```, then use ```git add .``` and ```git commit -m "update pic and title"```
@@ -257,4 +264,13 @@ _provided by Dr. Angela Yu on Udemy platform_
       - restore, roll back to last commit results
 3. what is ".gitignore"
    - .gitignore is a file used by the version control system Git to specify which files and directories should be excluded from version control. It allows you to specify patterns for files and directories that you want Git to ignore when you add, commit, or push changes to a repository.
-4. xxx
+4. branch
+   - create new branch by ```git branch branchName```
+   - check current branch by ```git branch```
+   - switch branch by ```git checkout branchName```
+   - merge branch, first switch to the branch you won't keep, then ```git merge anotherBranchName```
+5. forking and pull request
+   - A fork B repository, A is only avalibale to update A local forked repository, if A want to update B repository, A needs to create pull request
+   - B can review the pull request which other programmers created, and B has access and B can make decision
+## EJS (Embedded JavaScript)<a name="anchor_22"></a>
+1. cxcxc
