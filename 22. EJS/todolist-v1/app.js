@@ -37,11 +37,6 @@ app.get("/", (req, res)=>{
             console.log("Error: current day is equal to: "+dayKind);
     }
 
-    if (currentDay === 6 || currentDay === 0) {
-        day = day +", which is Weekend";
-    } else {
-        day = day +", which is Weekday";
-    }
     res.render("list", {kindOfDay: day});
 });
 

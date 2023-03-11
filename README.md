@@ -273,4 +273,13 @@ _provided by Dr. Angela Yu on Udemy platform_
    - A fork B repository, A is only avalibale to update A local forked repository, if A want to update B repository, A needs to create pull request
    - B can review the pull request which other programmers created, and B has access and B can make decision
 ## EJS (Embedded JavaScript)<a name="anchor_22"></a>
-1. cxcxc
+1. [documentation](https://ejs.co/)
+2. control flow, ```<% %>``` for each line in .ejs file
+   ```
+   <% if (kindOfDay === 6 || kindOfDay === 0) { %>
+        <h1 style="color: rgb(227, 126, 160);">Today is <%= kindOfDay %></h1>
+    <% } else {%>
+        <h1 style="color: rgb(48, 202, 223);">Today is <%= kindOfDay %></h1>
+    <% }%>
+    ```
+2. 
