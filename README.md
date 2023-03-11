@@ -278,8 +278,8 @@ _provided by Dr. Angela Yu on Udemy platform_
    ```
    <% if (kindOfDay === 6 || kindOfDay === 0) { %>
         <h1 style="color: rgb(227, 126, 160);">Today is <%= kindOfDay %></h1>
-    <% } else {%>
+   <% } else {%>
         <h1 style="color: rgb(48, 202, 223);">Today is <%= kindOfDay %></h1>
-    <% }%>
-    ```
+   <% }%>
+   ```
 2. 
