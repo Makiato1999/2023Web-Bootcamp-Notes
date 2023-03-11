@@ -250,7 +250,7 @@ _provided by Dr. Angela Yu on Udemy platform_
          - since i create this app in a folder on my desktop, i initialize the git repositery by ```git init```, then use ```git add .``` and ```git commit -m "update pic and title"```
       - then push to heroku server
          ```git push heroku master```
-      - logs, more details can be found on heroku documents
+      - logs, more details can be found on heroku documentations
 ## Version Control<a name="anchor_21"></a>
 1. use ```git log``` to check all commits
 2. commands
