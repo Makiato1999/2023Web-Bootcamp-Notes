@@ -250,7 +250,7 @@ _provided by Dr. Angela Yu on Udemy platform_
          - since i create this app in a folder on my desktop, i initialize the git repositery by ```git init```, then use ```git add .``` and ```git commit -m "update pic and title"```
       - then push to heroku server
          ```git push heroku master```
-      - logs, more details can be found on heroku documents
+      - logs, more details can be found on heroku documentations
 ## Version Control<a name="anchor_21"></a>
 1. use ```git log``` to check all commits
 2. commands
@@ -273,4 +273,13 @@ _provided by Dr. Angela Yu on Udemy platform_
    - A fork B repository, A is only avalibale to update A local forked repository, if A want to update B repository, A needs to create pull request
    - B can review the pull request which other programmers created, and B has access and B can make decision
 ## EJS (Embedded JavaScript)<a name="anchor_22"></a>
-1. cxcxc
+1. [documentation](https://ejs.co/)
+2. control flow, ```<% %>``` for each line in .ejs file
+   ```
+   <% if (kindOfDay === 6 || kindOfDay === 0) { %>
+        <h1 style="color: rgb(227, 126, 160);">Today is <%= kindOfDay %></h1>
+   <% } else {%>
+        <h1 style="color: rgb(48, 202, 223);">Today is <%= kindOfDay %></h1>
+   <% }%>
+   ```
+2. 
