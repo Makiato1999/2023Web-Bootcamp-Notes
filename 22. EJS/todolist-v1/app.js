@@ -8,6 +8,12 @@ app.set("view engine", "ejs");
 
 app.use(bodyParse.urlencoded({extended:true}));
 
+var items = [
+    "don't forget breakfast",
+    "learn Udemy",
+    "coffee time and take a nap"
+];
+
 app.get("/", (req, res)=>{
     var today = new Date();
 
@@ -19,14 +25,17 @@ app.get("/", (req, res)=>{
     var day = today.toLocaleDateString("en-US", options);
 
     res.render("list", {
-        kindOfDay: day
+        kindOfDay: day,
+        newItems: items
     });
     // res.render("list", {kindOfDay: day});
 });
 
 app.post("/", (req, res)=>{
-    var item = req.body.newItem;
-    console.log(item);
+    let item = req.body.inputNewItem;
+    items.push(item);
+
+    res.redirect("/");
 });
 
 app.listen(3000, ()=>{
