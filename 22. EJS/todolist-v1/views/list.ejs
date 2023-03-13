@@ -5,22 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <% if (kindOfDay === 6 || kindOfDay === 0) { %>
-        <h1 style="color: rgb(227, 126, 160);">Today is <%= kindOfDay %></h1>
-    <% } else {%>
-        <h1 style="color: rgb(48, 202, 223);">Today is <%= kindOfDay %></h1>
-    <% }%>
-    <ul>
-        <% for( let i = 0; i < newItems.length; i++ ) { %>
-            <li><%= newItems[i] %></li>
-        <% } %>
-    </ul>
+    <div class="box" id="heading">
+        <% if (kindOfDay === 6 || kindOfDay === 0) { %>
+            <h1 style="color: white;"><%= kindOfDay %> (weekend) </h1>
+        <% } else {%>
+            <h1 style="color: white;"><%= kindOfDay %> (weekday) </h1>
+        <% }%>
+    </div>
 
-    <form action="/" method="POST">
-        <input type="text" name="inputNewItem" placeholder="plan to ...">
-        <button type="submit" name="button">Add</button>
-    </form>
+    <div class="box">
+        <% for( let i = 0; i < newItems.length; i++ ) { %>
+            <div class="item">    
+                <input type="checkbox">
+                <p><%= newItems[i] %></p>
+            </div>
+        <% } %>
+        
+        <form class="item" action="/" method="POST">
+            <input type="text" name="inputNewItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+    </div>
+    
 </body>
 </html>

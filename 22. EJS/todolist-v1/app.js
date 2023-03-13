@@ -7,6 +7,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyParse.urlencoded({extended:true}));
+app.use(express.static("public"));
 
 let items = [
     "don't forget breakfast",
