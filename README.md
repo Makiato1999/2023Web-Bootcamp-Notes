@@ -282,4 +282,38 @@ _provided by Dr. Angela Yu on Udemy platform_
         <h1 style="color: rgb(48, 202, 223);">Today is <%= kindOfDay %></h1>
    <% }%>
    ```
-2. 
+2. Layouts
+   - example for list.ejs
+   ```
+   <%- include('header'); -%>
+   <h1>
+      Title
+   </h1>
+   <p>
+      My webpage
+   </p>
+   <%- include('footer'); -%>
+   ```
+3. how to determine the type of form and redirect
+   - in list.ejs, button name is list, value is listTitle
+   ```
+   <form class="item" action="/" method="POST">
+      <input type="text" name="inputNewItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value="<%= listTitle %>" >+</button>
+   </form>
+   ```
+   - in app.js, we can parse the request body to get the result of the button submission, and we can compare ```req.body.list``` with the current listTitle to find the direction we need to redirect
+   ```
+   app.post("/", (req, res)=>{
+      console.log(req.body);
+      let item = req.body.inputNewItem;
+      if (req.body.list === "Work List") {
+         workItems.push(item);
+         res.redirect("/work");
+      } else {
+         items.push(item);
+         res.redirect("/");
+      }
+   });
+   ```
+4. 
