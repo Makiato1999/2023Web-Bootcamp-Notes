@@ -8,6 +8,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 5. [API](#anchor_20)<br/>
 6. [Version Control](#anchor_21)<br/>
 7. [EJS (Embedded JavaScript)](#anchor_22)<br/>
+8. [Blog Website](#anchor_23)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -341,5 +342,27 @@ _provided by Dr. Angela Yu on Udemy platform_
      - nodejs module ```exports``` [instruction](https://www.geeksforgeeks.org/node-js-modules/)
 5. const
    - When you declare a variable with the const keyword, you are indicating that the variable is a constant and that its value cannot be reassigned. However, when you declare an array or a list using const, you are declaring that the variable itself cannot be reassigned to a new array or list, but you can still modify the elements within the array.
-
-
+## Blog Website<a name="anchor_23"></a>
+1. tips
+   - sometimes we will only download the package.json (we will not upload all packages to remote repository since packages could take up too much storage) from remote repository, such as
+      ```
+      {
+         "name": "ejs-challenge",
+         "version": "1.0.0",
+         "description": "",
+         "main": "app.js",
+         "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+         },
+         "author": "",
+         "license": "ISC",
+         "dependencies": {
+            "body-parser": "^1.18.3",
+            "ejs": "^2.6.1",
+            "express": "^4.16.3",
+            "lodash": "^4.17.11"
+         }  
+      }
+      ```
+         - thereby, the first step we need to do after cloning the repository is ```npm install```
+2. nnnn
