@@ -1,6 +1,9 @@
 // jshint esversion:6
 const express = require("express");
 const bodyParse = require("body-parser");
+const getDate = require("./date");
+// import module
+const date = require(__dirname+"/date.js");
 
 const app = express();
 
@@ -17,6 +20,7 @@ let items = [
 let workItems = [];
 
 app.get("/", (req, res)=>{
+    /* put this part into data.js
     let today = new Date();
 
     let options = {
@@ -25,6 +29,9 @@ app.get("/", (req, res)=>{
         month: "long"
     };
     let day = today.toLocaleDateString("en-US", options);
+    */
+    //let day = getDate();
+    let day = date.getDay();
 
     res.render("list", {
         listTitle: day,

@@ -316,4 +316,30 @@ _provided by Dr. Angela Yu on Udemy platform_
       }
    });
    ```
-4. 
+4. module
+   - in date.js, how to export
+   ```
+   module.exports.getDate = getDate;
+
+   function getDate() {
+      let day = new Date();
+      return day;
+   }
+   ```
+      - since module.exports is object, therefore you can have access to its attributes, such as ```module.exports.getDate```
+      - we use ```getDate``` instead of ```getDate()``` because we don't need to execute the function right now
+   - in app.js, how to invoke date.js module
+   ```
+   const date = require(__dirname+"/date.js");
+
+   ...
+
+   let day = date.getDay();
+   ```
+      - as we said above, the current date is an object, which has an attribute named getDay, and we run the function by ```getDay()```
+   - refactor
+      - nodejs module ```exports``` [instruction](https://www.geeksforgeeks.org/node-js-modules/)
+5. const
+   - When you declare a variable with the const keyword, you are indicating that the variable is a constant and that its value cannot be reassigned. However, when you declare an array or a list using const, you are declaring that the variable itself cannot be reassigned to a new array or list, but you can still modify the elements within the array.
+
+
