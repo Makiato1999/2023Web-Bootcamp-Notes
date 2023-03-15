@@ -16,11 +16,30 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
+app.get("/", (req, res)=>{
+  res.render("home", {
+    homeStartingContent: homeStartingContent,
+  });
+});
 
+app.get("/about", (req, res)=>{
+  res.render("about", {
+    aboutContent: aboutContent
+  });
+});
 
+app.get("/contact", (req, res)=>{
+  res.render("contact", {
+    contactContent: contactContent
+  });
+});
 
-
-
+app.get("/compose", (req, res)=>{
+  res.render("compose");
+});
+app.post("/compose", (req, res)=>{
+  console.log(req.body.postTitle);
+});
 
 
 
