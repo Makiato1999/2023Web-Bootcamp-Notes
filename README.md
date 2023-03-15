@@ -365,4 +365,6 @@ _provided by Dr. Angela Yu on Udemy platform_
       }
       ```
          - thereby, the first step we need to do after cloning the repository is ```npm install```
-2. nnnn
+2. navigation bar
+   - good to use bootstrap specific class
+3. nnn
