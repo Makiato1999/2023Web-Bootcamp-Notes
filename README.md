@@ -367,4 +367,20 @@ _provided by Dr. Angela Yu on Udemy platform_
          - thereby, the first step we need to do after cloning the repository is ```npm install```
 2. navigation bar
    - good to use bootstrap specific class
-3. nnn
+3. Route parameters
+   - more details in [documentation](https://expressjs.com/en/guide/routing.html)
+   - example
+      ```
+      Route path: /users/:userId/books/:bookId
+      Request URL: http://localhost:3000/users/34/books/8989
+      req.params: { "userId": "34", "bookId": "8989" }
+      ```
+         - l think it is simmilar to regular expression?
+4. lowerCase
+   - install package "lodash"
+      ```
+      var _ = require('lodash');
+      ...
+      let requestedTitle = _.lowerCase(req.params.postName);
+      ```
+5. sss
