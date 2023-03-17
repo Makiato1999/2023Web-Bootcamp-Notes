@@ -364,7 +364,7 @@ _provided by Dr. Angela Yu on Udemy platform_
          }  
       }
       ```
-         - thereby, the first step we need to do after cloning the repository is ```npm install```
+      - thereby, the first step we need to do after cloning the repository is ```npm install```
 2. navigation bar
    - good to use bootstrap specific class
 3. Route parameters
@@ -375,7 +375,7 @@ _provided by Dr. Angela Yu on Udemy platform_
       Request URL: http://localhost:3000/users/34/books/8989
       req.params: { "userId": "34", "bookId": "8989" }
       ```
-         - l think it is simmilar to regular expression?
+      - l think it is simmilar to regular expression?
 4. lowerCase
    - install package "lodash"
       ```
