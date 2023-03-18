@@ -9,6 +9,8 @@ _provided by Dr. Angela Yu on Udemy platform_
 6. [Version Control](#anchor_21)<br/>
 7. [EJS (Embedded JavaScript)](#anchor_22)<br/>
 8. [Blog Website](#anchor_23)<br/>
+9. [Database](#anchor_24)<br/>
+9. [SQL](#anchor_25)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -364,7 +366,7 @@ _provided by Dr. Angela Yu on Udemy platform_
          }  
       }
       ```
-         - thereby, the first step we need to do after cloning the repository is ```npm install```
+      - thereby, the first step we need to do after cloning the repository is ```npm install```
 2. navigation bar
    - good to use bootstrap specific class
 3. Route parameters
@@ -375,7 +377,7 @@ _provided by Dr. Angela Yu on Udemy platform_
       Request URL: http://localhost:3000/users/34/books/8989
       req.params: { "userId": "34", "bookId": "8989" }
       ```
-         - l think it is simmilar to regular expression?
+      - l think it is simmilar to regular expression?
 4. lowerCase
    - install package "lodash"
       ```
@@ -383,4 +385,14 @@ _provided by Dr. Angela Yu on Udemy platform_
       ...
       let requestedTitle = _.lowerCase(req.params.postName);
       ```
-5. sss
+## Database<a name="anchor_24"></a>
+1. difference between MySQL and MongoDB
+   | MySQL | MongoDB |
+   |----------|----------|
+   | more mature | shiny and new |
+   | table structure | document structure |
+   | requires a schema | more flexible to changes |
+   | great with relationships | not great with complex relationships |
+   | scales vertically | horizontally scalable |
+## SQL<a name="anchor_25"></a>
+1. 
