@@ -385,7 +385,6 @@ _provided by Dr. Angela Yu on Udemy platform_
       ...
       let requestedTitle = _.lowerCase(req.params.postName);
       ```
-5. sss
 ## Database<a name="anchor_24"></a>
 1. difference between MySQL and MongoDB
    | MySQL | MongoDB |
