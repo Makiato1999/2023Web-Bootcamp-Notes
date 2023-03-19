@@ -11,6 +11,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 8. [Blog Website](#anchor_23)<br/>
 9. [Database](#anchor_24)<br/>
 9. [SQL](#anchor_25)<br/>
+9. [MongoDB](#anchor_26)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -395,4 +396,88 @@ _provided by Dr. Angela Yu on Udemy platform_
    | great with relationships | not great with complex relationships |
    | scales vertically | horizontally scalable |
 ## SQL<a name="anchor_25"></a>
-1. 
+1. sqlite online [playground](https://sqliteonline.com/)
+2. CURD, simple demonstration
+   - create
+      ```
+      CREATE TABLE customers (
+	      id TNT NOT null,
+         first_name STRING,
+         last_name STRING,
+         address STRING,
+         PRIMARY KEY (id)
+      );
+
+      CREATE TABLE products (
+	      id TNT NOT null,
+         name STRING,
+         price MONEY,
+         PRIMARY KEY (id)
+      );
+      ```
+   - insert
+      ```
+      INSERT INTO customers
+      VALUES (1, "Linda", "Song", "1200 priza st")
+
+      INSERT INTO customers
+      VALUES (2, "James", "Lee", "300 romat st")
+
+      INSERT INTO products (id, name)
+      VALUES (2, "Wendy")
+
+      INSERT INTO products (id, name, price)
+      VALUES (1, "James", 100)
+
+      INSERT INTO products
+      VALUES (3, "Ryan", 23)
+      ```
+   - select
+      ```
+      SELECT * FROM products WHERE id=1
+      ```
+   - update
+      ```
+      UPDATE products
+      SET price = 80, stock=22
+      WHERE id = 2
+
+      UPDATE products
+      SET name="Chess", price = 20, stock=45
+      WHERE id = 1
+      ```
+   - delete
+      ```
+      DELETE FROM products
+      WHERE id=3
+      ```
+3. foreign key
+   - create
+      ```
+      CREATE TABLE orders (
+         id INT NOT NULL,
+         order_number INT,
+         customer_id INT,
+         product_id INT,
+         PRIMARY KEY (id),
+         FOREIGN KEY (customer_id) REFERENCES customers(id),
+         FOREIGN KEY (product_id) REFERENCES products(id)
+      );
+      ```
+   - join (inner join), more details in w3school 
+      ```
+      INSERT INTO orders
+      VALUES (1, 1, 2, 1)
+
+      INSERT INTO orders
+      VALUES (2, 2, 2, 1)
+      ```
+      ```
+      SELECT orders.order_number, customers.first_name, customers.last_name, customers.address
+      FROM orders
+      INNER JOIN customers
+      ON orders.customer_id = customers.id;
+      ```
+4. left join, right join, ...
+## MongoDB<a name="anchor_26"></a>
+1. nnn
