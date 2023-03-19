@@ -481,7 +481,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 4. left join, right join, ...
 ## MongoDB<a name="anchor_26"></a>
 1. install mongoDB community edition
-   - [download](https://www.mongodb.com/try/download/community), then it will be download in Downloads or Desktop, whatever, we will move it to /usr/local/mongodb
+   - [download](https://www.mongodb.com/try/download/community), then it will be download in Downloads or Desktop, whatever, we will move it to ```/usr/local/mongodb```
       ```
       sudo mv '/Users/xiexiaoran/Desktop/mongodb-macos-x86_64-6.0.5' /usr/local/mongodb
       ```
