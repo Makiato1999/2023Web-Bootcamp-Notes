@@ -528,15 +528,17 @@ _provided by Dr. Angela Yu on Udemy platform_
       | log directory | /usr/local/var/log/mongodb | /opt/homebrew/var/log/mongodb |
       | data directory | /usr/local/var/mongodb | /opt/homebrew/var/mongodb |
     - run MongoDB Community Edition
-      - To run MongoDB (i.e. the mongod process) as a macOS service
-      	```
-      	brew services start mongodb-community@6.0
-      
-      	brew services stop mongodb-community@6.0
-      	```
-      - To run MongoDB (i.e. the mongod process) manually as a background process
+    	- To run MongoDB (i.e. the mongod process) as a macOS service
+      		```
+      		brew services start mongodb-community@6.0
+      		brew services stop mongodb-community@6.0
+      		```
+      	- To run MongoDB (i.e. the mongod process) manually as a background process
+      	 	```
+      		mongod --config /usr/local/etc/mongod.conf --fork
+      		```
+    - connect and use MongoDB
+    	```
+	mongosh
 	```
-      	mongod --config /usr/local/etc/mongod.conf --fork
-      	```
-   - connect and use MongoDB
 4. ssss
