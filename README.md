@@ -485,5 +485,14 @@ _provided by Dr. Angela Yu on Udemy platform_
       ```
       sudo mv '/Users/xiexiaoran/Desktop/mongodb-macos-x86_64-6.0.5' /usr/local/mongodb
       ```
-   - sss
+   - since mac OS has updated, we need to follow the [documentation](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x-tarball/)
+      ```
+      sudo mkdir -p /usr/local/var/mongodb
+      sudo mkdir -p /usr/local/var/log/mongodb
+      
+      sudo chown xiexiaoran /usr/local/var/mongodb
+      sudo chown xiexiaoran /usr/local/var/log/mongodb
+      
+      open /usr/local/var/
+      ```
 2. sss
