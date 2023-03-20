@@ -485,7 +485,15 @@ _provided by Dr. Angela Yu on Udemy platform_
       ```
       sudo mv '/Users/xiexiaoran/Desktop/mongodb-macos-x86_64-6.0.5' /usr/local/mongodb
       ```
-   - since mac OS has updated, we need to follow the [documentation](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x-tarball/)
+    - update shell resource file
+      - check shell version by ```echo $0```
+      - if you are bash, follow this [link](https://blog.londonappbrewery.com/how-to-download-install-mongodb-on-mac-2895ccd2b5c1), also, bash can follow the offical documentation which i have put the link above
+      - if you are zsh as well, create/open ```~/.zshrc```, input the path
+      ```
+      export PATH="/usr/local/mongodb/bin:$PATH"
+      ```
+      - then update the shell by ```source ~/.zshrc```
+    - since mac OS has updated, we can't use the default path (```/data/db```) for saving data, so need to create new path and folder, more details needs to follow the [documentation](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x-tarball/)
       ```
       sudo mkdir -p /usr/local/var/mongodb
       sudo mkdir -p /usr/local/var/log/mongodb
@@ -495,4 +503,8 @@ _provided by Dr. Angela Yu on Udemy platform_
       
       open /usr/local/var/
       ```
+      	- so data will be saved in ```/usr/local/var/mongodb```
+    - then check mongodb by ```mongod --version```, i don't know why i can't use ```mongo --version``` 
+    - open the mongodb by ```mongod```, then check if it runs successfully by ```ps aux | grep -v grep | grep mongod```
+    - still have many issues
 2. sss
