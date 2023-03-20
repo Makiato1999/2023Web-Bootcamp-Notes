@@ -507,4 +507,36 @@ _provided by Dr. Angela Yu on Udemy platform_
     - then check mongodb by ```mongod --version```, i don't know why i can't use ```mongo --version``` 
     - open the mongodb by ```mongod```, then check if it runs successfully by ```ps aux | grep -v grep | grep mongod```
     - still have many issues
-2. sss
+2. since my Mac is an intel processor and OS version is above 10, so i meet too many issues
+3. let's follow the offical [documentation (using homebrew)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
+    - first install xcode, Homebrew requires the Xcode command-line tools from Apple's Xcode
+      ```
+      xcode-select --install
+      ```
+    - download the official Homebrew formula for MongoDB and the Database Tools
+      ```
+      brew tap mongodb/brew
+      ```
+    - update Homebrew and check it out
+      ```
+      brew update
+      ```
+    - installation will create the following files and directories at the location specified below
+      |  | Intel Processor | M1 Processor |
+      |----------|----------|----------|
+      | configuration file | /usr/local/etc/mongod.conf | /opt/homebrew/etc/mongod.conf |
+      | log directory | /usr/local/var/log/mongodb | /opt/homebrew/var/log/mongodb |
+      | data directory | /usr/local/var/mongodb | /opt/homebrew/var/mongodb |
+    - run MongoDB Community Edition
+      - To run MongoDB (i.e. the mongod process) as a macOS service
+      	```
+      	brew services start mongodb-community@6.0
+      
+      	brew services stop mongodb-community@6.0
+      	```
+      - To run MongoDB (i.e. the mongod process) manually as a background process
+	```
+      	mongod --config /usr/local/etc/mongod.conf --fork
+      	```
+   - connect and use MongoDB
+4. ssss
