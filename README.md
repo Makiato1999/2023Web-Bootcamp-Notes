@@ -537,8 +537,8 @@ _provided by Dr. Angela Yu on Udemy platform_
       	 	```
       		mongod --config /usr/local/etc/mongod.conf --fork
       		```
-    - connect and use MongoDB
-    	```
-	mongosh
-	```
+   - connect and use MongoDB
+     ```
+     mongosh
+     ```
 4. ssss
