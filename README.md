@@ -593,27 +593,5 @@ _provided by Dr. Angela Yu on Udemy platform_
         	]
      	}
      )
-     // update
-     db.products.updateOne(
-     	{
-		_id: 2
-   	},
-     	{
-        	$set: {
-            		reviews: [
-                		{
-                    		authorName: "How",
-                    		rating: 4,
-                    		review: "pretty heavy for a pencil"
-                		},
-                		{
-                    		authorName: "Tommy",
-                    		rating: 5,
-                    		review: "nice price"
-                		}
-            		]
-        	}
-    	}
-     )
      ```
 2. sss
