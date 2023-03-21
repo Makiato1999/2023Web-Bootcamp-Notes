@@ -562,6 +562,10 @@ _provided by Dr. Angela Yu on Udemy platform_
    - update
      ```
      db.products.updateOne({_id: 1}, {$set: {stock: 32}})
+     db.products.updateOne({_id: 2}, {$set: {stock: 12}})
      ```
-   - 
+   - delete
+     ```
+     db.products.deleteOne({_id: 1})
+     ```
 2. sss
