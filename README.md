@@ -480,8 +480,8 @@ _provided by Dr. Angela Yu on Udemy platform_
       ```
 4. left join, right join, ...
 ## MongoDB<a name="anchor_26"></a>
-1. install mongoDB community edition
-   - [download](https://www.mongodb.com/try/download/community), then it will be download in Downloads or Desktop, whatever, we will move it to ```/usr/local/mongodb```
+##### install mongoDB community edition
+1. Install by ```.tgz Tarball```, but there are still too many left issues which i cannot handle, so i recommand the next installation way by homebrew. This is the [download](https://www.mongodb.com/try/download/community) and [documentation](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x-tarball/)
       ```
       sudo mv '/Users/xiexiaoran/Desktop/mongodb-macos-x86_64-6.0.5' /usr/local/mongodb
       ```
@@ -493,7 +493,7 @@ _provided by Dr. Angela Yu on Udemy platform_
       export PATH="/usr/local/mongodb/bin:$PATH"
       ```
       - then update the shell by ```source ~/.zshrc```
-    - since mac OS has updated, we can't use the default path (```/data/db```) for saving data, so need to create new path and folder, more details needs to follow the [documentation](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x-tarball/)
+    - since mac OS has updated, we can't use the default path (```/data/db```) for saving data, so need to create new path and folder, more details needs to follow the [documentation]()
       ```
       sudo mkdir -p /usr/local/var/mongodb
       sudo mkdir -p /usr/local/var/log/mongodb
@@ -507,4 +507,55 @@ _provided by Dr. Angela Yu on Udemy platform_
     - then check mongodb by ```mongod --version```, i don't know why i can't use ```mongo --version``` 
     - open the mongodb by ```mongod```, then check if it runs successfully by ```ps aux | grep -v grep | grep mongod```
     - still have many issues
+2. Install by homebrew. I recommand this way, since my Mac is an intel processor and OS version is above 10, so i meet too many issues when i install mongodb by ```.tgz Tarball```. All commands are followed by the offical [documentation (using homebrew)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).
+    - first install xcode, Homebrew requires the Xcode command-line tools from Apple's Xcode
+      ```
+      xcode-select --install
+      ```
+    - download the official Homebrew formula for MongoDB and the Database Tools
+      ```
+      brew tap mongodb/brew
+      ```
+    - update Homebrew and check it out
+      ```
+      brew update
+      ```
+    - installation will create the following files and directories at the location specified below
+      |  | Intel Processor | M1 Processor |
+      |----------|----------|----------|
+      | configuration file | /usr/local/etc/mongod.conf | /opt/homebrew/etc/mongod.conf |
+      | log directory | /usr/local/var/log/mongodb | /opt/homebrew/var/log/mongodb |
+      | data directory | /usr/local/var/mongodb | /opt/homebrew/var/mongodb |
+    - run MongoDB Community Edition
+    	- To run MongoDB (i.e. the mongod process) as a macOS service
+      		```
+      		brew services start mongodb-community@6.0
+      		brew services stop mongodb-community@6.0
+      		```
+      	- To run MongoDB (i.e. the mongod process) manually as a background process
+      	 	```
+      		mongod --config /usr/local/etc/mongod.conf --fork
+      		```
+   - connect and use MongoDB
+     ```
+     mongosh
+     ```
+##### mongoDB
+1. shell operations
+   - [create](https://www.mongodb.com/docs/mongodb-shell/)
+     ```
+     use shopDB
+     
+     db.products.insertOne({_id: 1, name: "Pen", price: 1.20})
+     db.products.insertOne({_id: 2, name: "Pencil", price: 0.80})
+     ```
+   - query
+     ```
+     db.products.find()
+     
+     db.products.find({_id: 1}, {name: 1, price: true})
+     db.products.find({_id: {$gt: 1}}, {name: 1, price: true})
+     ```
+   - update
+   - 
 2. sss
