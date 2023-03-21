@@ -570,4 +570,50 @@ _provided by Dr. Angela Yu on Udemy platform_
      ```
      db.products.deleteOne({_id: 1})
      ```
+   - more
+     ```
+     // insert new row
+     db.products.insert(
+     	{
+        	_id: 3,
+        	name: "Cupcake",
+        	price: 1.30,
+        	stock: 43,
+        	reviews: [
+            	{
+                	authorName: "Andrew",
+                	rating: 5,
+                	review: "it sounds good"
+            	},
+            	{
+                	authorName: "Shawn",
+                	rating: 2,
+                	review: "kind of salty, not recommend"
+            	}
+        	]
+     	}
+     )
+     // update
+     db.products.updateOne(
+     	{
+		_id: 2
+   	},
+     	{
+        	$set: {
+            		reviews: [
+                		{
+                    		authorName: "How",
+                    		rating: 4,
+                    		review: "pretty heavy for a pencil"
+                		},
+                		{
+                    		authorName: "Tommy",
+                    		rating: 5,
+                    		review: "nice price"
+                		}
+            		]
+        	}
+    	}
+     )
+     ```
 2. sss
