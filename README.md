@@ -540,4 +540,22 @@ _provided by Dr. Angela Yu on Udemy platform_
      ```
      mongosh
      ```
-4. ssss
+##### mongoDB
+1. shell operations
+   - [create](https://www.mongodb.com/docs/mongodb-shell/)
+     ```
+     use shopDB
+     
+     db.products.insertOne({_id: 1, name: "Pen", price: 1.20})
+     db.products.insertOne({_id: 2, name: "Pencil", price: 0.80})
+     ```
+   - query
+     ```
+     db.products.find()
+     
+     db.products.find({_id: 1}, {name: 1, price: true})
+     db.products.find({_id: {$gt: 1}}, {name: 1, price: true})
+     ```
+   - update
+   - 
+2. sss
