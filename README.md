@@ -12,6 +12,8 @@ _provided by Dr. Angela Yu on Udemy platform_
 9. [Database](#anchor_24)<br/>
 9. [SQL](#anchor_25)<br/>
 9. [MongoDB](#anchor_26)<br/>
+	- [installation by homebrew (mac with intel processor)](#anchor_26_1)<br/>
+	- [mongodb shell (mongosh)](#anchor_26_2)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -507,7 +509,7 @@ _provided by Dr. Angela Yu on Udemy platform_
     - then check mongodb by ```mongod --version```, i don't know why i can't use ```mongo --version``` 
     - open the mongodb by ```mongod```, then check if it runs successfully by ```ps aux | grep -v grep | grep mongod```
     - still have many issues
-2. Install by homebrew. I recommand this way, since my Mac is an intel processor and OS version is above 10, so i meet too many issues when i install mongodb by ```.tgz Tarball```. All commands are followed by the offical [documentation (using homebrew)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).
+2. Install by homebrew. I recommand this way, since my Mac is an intel processor and OS version is above 10, so i meet too many issues when i install mongodb by ```.tgz Tarball```. All commands are followed by the offical [documentation (using homebrew)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/). <a name="anchor_26_1"></a>
     - first install xcode, Homebrew requires the Xcode command-line tools from Apple's Xcode
       ```
       xcode-select --install
@@ -540,7 +542,7 @@ _provided by Dr. Angela Yu on Udemy platform_
      ```
      mongosh
      ```
-##### mongoDB
+##### mongoDB <a name="anchor_26_2"></a>
 1. [shell](https://www.mongodb.com/docs/mongodb-shell/) operations
    - document
    	in MongoDB, documents are represented as JavaScript objects (JSON-like) with key-value pairs
