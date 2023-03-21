@@ -541,8 +541,8 @@ _provided by Dr. Angela Yu on Udemy platform_
      mongosh
      ```
 ##### mongoDB
-1. shell operations
-   - [create](https://www.mongodb.com/docs/mongodb-shell/)
+1. [shell](https://www.mongodb.com/docs/mongodb-shell/) operations
+   - create
      ```
      use shopDB
      
@@ -553,9 +553,15 @@ _provided by Dr. Angela Yu on Udemy platform_
      ```
      db.products.find()
      
+     // (query, projections)
      db.products.find({_id: 1}, {name: 1, price: true})
+     // 1 is true, 0 is false
      db.products.find({_id: {$gt: 1}}, {name: 1, price: true})
+     db.products.find({_id: {$gt: 1}}, {name: 1, _id: 0})
      ```
    - update
+     ```
+     db.products.updateOne({_id: 1}, {$set: {stock: 32}})
+     ```
    - 
 2. sss
