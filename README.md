@@ -542,7 +542,9 @@ _provided by Dr. Angela Yu on Udemy platform_
      ```
 ##### mongoDB
 1. [shell](https://www.mongodb.com/docs/mongodb-shell/) operations
-   - create
+   - document
+   	in MongoDB, documents are represented as JavaScript objects (JSON-like) with key-value pairs
+   - create, insert document
      ```
      use shopDB
      
