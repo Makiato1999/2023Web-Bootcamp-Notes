@@ -509,7 +509,7 @@ _provided by Dr. Angela Yu on Udemy platform_
     - then check mongodb by ```mongod --version```, i don't know why i can't use ```mongo --version``` 
     - open the mongodb by ```mongod```, then check if it runs successfully by ```ps aux | grep -v grep | grep mongod```
     - still have many issues
-2. Install by homebrew. I recommand this way, since my Mac is an intel processor and OS version is above 10, so i meet too many issues when i install mongodb by ```.tgz Tarball```. All commands are followed by the offical [documentation (using homebrew)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/). <a name="anchor_26_1"></a>
+2.  <a name="anchor_26_1"></a>Install by homebrew. I recommand this way, since my Mac is an intel processor and OS version is above 10, so i meet too many issues when i install mongodb by ```.tgz Tarball```. All commands are followed by the offical [documentation (using homebrew)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).
     - first install xcode, Homebrew requires the Xcode command-line tools from Apple's Xcode
       ```
       xcode-select --install
