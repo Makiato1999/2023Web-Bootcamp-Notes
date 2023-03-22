@@ -635,4 +635,13 @@ _provided by Dr. Angela Yu on Udemy platform_
 			  local     72.00 KiB
 		   	  shopDB    72.00 KiB
 			  ```
+		- after using find in database, we can have outputs like
+		  ```
+		  xiexiaoran@wpa-6-974 FruitsProject % node app.js
+		  3 documents were inserted
+		  { name: 'Apple', review: 'Delicious' }
+		  { name: 'Peach', review: 'Not bad' }
+		  { name: 'Apple', review: 'Delicious' }
+		  { name: 'Peach', review: 'Not bad' }
+		  ```
 3. sss
