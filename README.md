@@ -596,4 +596,6 @@ _provided by Dr. Angela Yu on Udemy platform_
      	}
      )
      ```
-2. sss
+2. connect to mongodb
+	- run it locally by url ```mongodb://localhost:<port>```
+3. sss
