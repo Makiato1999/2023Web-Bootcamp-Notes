@@ -599,11 +599,40 @@ _provided by Dr. Angela Yu on Udemy platform_
      ```
 2. connect to mongodb<a name="anchor_26_3"></a>
 	- run server by ```mongod --config /usr/local/etc/mongod.conf``` since we don't have ```/data/db```
+	  ```
+	  xiexiaoran@wifi-wpa-cw-140-193-232-58 FruitsProject % mongod --config /usr/local/etc/mongod.conf
+		
+	  < tips: nothing is here >
+	  ```
 		- my installation path is listed in the above table, but i will list them below again in case i am confused in the future
 			1. configuration file: ```/usr/local/etc/mongod.conf```
 			2. log directory: ```/usr/local/var/log/mongodb```
 			3. data directory: ```/usr/local/var/mongodb```
-		- use ```mongod --dbpath /usr/local/var/mongodb```, which can check the server port 
-		- check server processes status by ```ps aux | grep mongod```
-	- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
+		- then we can open another terminal and check server processes status by ```ps aux | grep mongod```
+		  ```
+		  xiexiaoran@wpa-6-974 FruitsProject % ps aux | grep mongod
+		  xiexiaoran       27438   0.6  0.7 35982372  59388 s000  S+    5:35pm   0:01.36 mongod --config /usr/local/etc/mongod.conf
+		  xiexiaoran       27444   0.0  0.0 33598032    608 s001  S+    5:36pm   0:00.01 grep mongod
+		  ```
+			- kill process by ```kill pid```
+	- in nodejs
+		- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
+			- use ```mongod --dbpath /usr/local/var/mongodb```, which can check the server port, such as
+			  ```
+			  ...
+			  
+			  {"t":{"$date":"2023-03-22T17:51:38.198-05:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+			  {"t":{"$date":"2023-03-22T17:51:38.198-05:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"127.0.0.1"}}
+			  {"t":{"$date":"2023-03-22T17:51:38.198-05:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+			  ```
+		- after create collection and insert documents, we can check the local data storage whether saved the data
+			- by ```mongosh```, we can then ```show dbs``` to retrieve all databases, such as
+			  ```
+			  test> show dbs
+			  admin     40.00 KiB
+			  config    48.00 KiB
+			  fruitsDB   8.00 KiB
+			  local     72.00 KiB
+		   	  shopDB    72.00 KiB
+			  ```
 3. sss
