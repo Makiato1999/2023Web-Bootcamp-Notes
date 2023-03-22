@@ -597,5 +597,7 @@ _provided by Dr. Angela Yu on Udemy platform_
      )
      ```
 2. connect to mongodb
-	- run it locally by url ```mongodb://localhost:<port>```
+	- run server by ```mongod --config /usr/local/etc/mongod.conf``` since we don't have ```/data/db```
+		- check server processes status by  ```ps aux | grep mongod```
+	- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
 3. sss
