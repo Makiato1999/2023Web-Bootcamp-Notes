@@ -14,6 +14,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 9. [MongoDB](#anchor_26)<br/>
 	- [installation by homebrew (mac with intel processor)](#anchor_26_1)<br/>
 	- [mongodb shell (mongosh)](#anchor_26_2)<br/>
+	- [connect to mongodb](#anchor_26_3)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -596,7 +597,7 @@ _provided by Dr. Angela Yu on Udemy platform_
      	}
      )
      ```
-2. connect to mongodb
+2. connect to mongodb<a name="anchor_26_3"></a>
 	- run server by ```mongod --dbpath /usr/local/var/mongodb``` since we don't have ```/data/db```
 		- or```mongod --config /usr/local/etc/mongod.conf```, i am not sure why this also works
 		- check server processes status by ```ps aux | grep mongod```
