@@ -1,3 +1,3 @@
 ### To Do List
-<img src="todolist-v1/demo/1.png"  width="800" height="500">
+<img src="demo/1.png"  width="800" height="400">
 
