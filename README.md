@@ -597,7 +597,8 @@ _provided by Dr. Angela Yu on Udemy platform_
      )
      ```
 2. connect to mongodb
-	- run server by ```mongod --config /usr/local/etc/mongod.conf``` since we don't have ```/data/db```
-		- check server processes status by  ```ps aux | grep mongod```
+	- run server by ```mongod --dbpath /usr/local/var/mongodb``` since we don't have ```/data/db```
+		- or```mongod --config /usr/local/etc/mongod.conf```, i am not sure why this also works
+		- check server processes status by ```ps aux | grep mongod```
 	- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
 3. sss
