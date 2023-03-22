@@ -1,20 +1,28 @@
 const { MongoClient } = require("mongodb");
+const assert = require('assert');
+
 
 // Replace the uri string with your connection string.
-const uri = "<connection string uri>";
+const uri = "mongodb://localhost:27017";
+const dbName = "fruitsDB";
 
 const client = new MongoClient(uri);
 
 async function run() {
   try {
-    const database = client.db('fruitsDB');
-    const movies = database.collection('movies');
+    const database = client.db(dbName);
+    const coll = database.collection('fruits');
 
-    // Query for a movie that has the title 'Back to the Future'
-    const query = { title: 'Back to the Future' };
-    const movie = await movies.findOne(query);
+    const options = { ordered: true };
 
-    console.log(movie);
+    let result = await coll.insertMany([
+      { name: 'Apple', score: 8, reviews: 'Delicious' },
+      { name: 'Peach', score: 6, reviews: 'Not bad' },
+      { name: 'Orange', score: 3, reviews: 'Kind of sour' }
+     ], options);
+     
+    console.log(`${result.insertedCount} documents were inserted`);
+
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();

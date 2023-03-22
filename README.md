@@ -14,6 +14,7 @@ _provided by Dr. Angela Yu on Udemy platform_
 9. [MongoDB](#anchor_26)<br/>
 	- [installation by homebrew (mac with intel processor)](#anchor_26_1)<br/>
 	- [mongodb shell (mongosh)](#anchor_26_2)<br/>
+	- [connect to mongodb](#anchor_26_3)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -596,4 +597,13 @@ _provided by Dr. Angela Yu on Udemy platform_
      	}
      )
      ```
-2. sss
+2. connect to mongodb<a name="anchor_26_3"></a>
+	- run server by ```mongod --config /usr/local/etc/mongod.conf``` since we don't have ```/data/db```
+		- my installation path is listed in the above table, but i will list them below again in case i am confused in the future
+			1. configuration file: ```/usr/local/etc/mongod.conf```
+			2. log directory: ```/usr/local/var/log/mongodb```
+			3. data directory: ```/usr/local/var/mongodb```
+		- use ```mongod --dbpath /usr/local/var/mongodb```, which can check the server port 
+		- check server processes status by ```ps aux | grep mongod```
+	- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
+3. sss
