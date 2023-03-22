@@ -598,12 +598,12 @@ _provided by Dr. Angela Yu on Udemy platform_
      )
      ```
 2. connect to mongodb<a name="anchor_26_3"></a>
-	- run server by ```mongod --dbpath /usr/local/var/mongodb``` since we don't have ```/data/db```
+	- run server by ```mongod --config /usr/local/etc/mongod.conf``` since we don't have ```/data/db```
 		- my installation path is listed in the above table, but i will list them below again in case i am confused in the future
 			1. configuration file: ```/usr/local/etc/mongod.conf```
 			2. log directory: ```/usr/local/var/log/mongodb```
 			3. data directory: ```/usr/local/var/mongodb```
-		- or ```mongod --config /usr/local/etc/mongod.conf```, i am not sure why this also works
+		- use ```mongod --dbpath /usr/local/var/mongodb```, which can check the server port 
 		- check server processes status by ```ps aux | grep mongod```
 	- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
 3. sss
