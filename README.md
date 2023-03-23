@@ -654,7 +654,5 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 		  3 documents were inserted
 		  { name: 'Apple', review: 'Delicious' }
 		  { name: 'Peach', review: 'Not bad' }
-		  { name: 'Apple', review: 'Delicious' }
-		  { name: 'Peach', review: 'Not bad' }
 		  ```
 3. sss
