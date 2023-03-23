@@ -628,7 +628,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 		  ```
 			- kill process by ```kill pid```
 	- in nodejs
-		- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017
+		- connect it locally by url ```mongodb://localhost:<port>```, local server port on my device is 27017, [documentation](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-other-ways-to-connect)
 			- use ```mongod --dbpath /usr/local/var/mongodb```, which can check the server port, such as
 			  ```
 			  ...
@@ -637,6 +637,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 			  {"t":{"$date":"2023-03-22T17:51:38.198-05:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"127.0.0.1"}}
 			  {"t":{"$date":"2023-03-22T17:51:38.198-05:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
 			  ```
+		- then we can create backend application such as app.js, then run it by ```node app.js```, [documentation](https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/), MongoDB operations can be find here as well, [documentation](https://www.mongodb.com/docs/drivers/node/current/usage-examples/)
 		- after create collection and insert documents, we can check the local data storage whether saved the data
 			- by ```mongosh```, we can then ```show dbs``` to retrieve all databases, such as
 			  ```
