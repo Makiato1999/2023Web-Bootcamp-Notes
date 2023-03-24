@@ -27,6 +27,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- [installation by homebrew (mac with intel processor)](#anchor_26_1)<br/>
 	- [mongodb shell (mongosh)](#anchor_26_2)<br/>
 	- [connect to mongodb](#anchor_26_3)<br/>
+9. [Mongoose](#anchor_27)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -655,4 +656,11 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 		  { name: 'Apple', review: 'Delicious' }
 		  { name: 'Peach', review: 'Not bad' }
 		  ```
+## mongoose <a name="anchor_27"></a>
+1. installalation
+   - simple, install by ```npm i mongoose```
+2. issues
+   - since different version (version updated recently), there are some problems, such as query functions can't hold callback function in it
+      - deal with by using  ```await```, more practical details on this [link](https://stackoverflow.com/questions/75586474/mongoose-stopped-accepting-callbacks-for-some-of-its-functions)
+      - since we need to use await, so make sure to wrap this code in an ```async``` function
 3. sss
