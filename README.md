@@ -660,7 +660,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 1. installalation
    - simple, install by ```npm i mongoose```
 2. issues
-   - since different version (version updated recently), there are some problems, such as query functions can't hold callback function in it
+   - since there are different versions (version has updated recently), such as query functions can't acccept callback function
       ```
       xiexiaoran@wpa-6-382 FruitsProject % node app.js
       /Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/27. Mongoose/FruitsProject/node_modules/mongoose/lib/model.js:2966
