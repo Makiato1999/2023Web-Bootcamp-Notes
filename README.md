@@ -674,4 +674,6 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       ```
       - deal with by using  ```await```, more practical details on this [link](https://stackoverflow.com/questions/75586474/mongoose-stopped-accepting-callbacks-for-some-of-its-functions)
       - since we need to use await, so make sure to wrap this code in an ```async``` function
-3. sss
+3. build-in validators
+   - [validation](https://mongoosejs.com/docs/validation.html)
+   - 

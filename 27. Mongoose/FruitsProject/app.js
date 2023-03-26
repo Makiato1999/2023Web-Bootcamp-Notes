@@ -7,7 +7,11 @@ async function main() {
 
   const fruitSchema = new mongoose.Schema({
     name: String,
-    rating: Number,
+    rating: {
+      type: Number,
+      min: 1,
+      max: 10
+    },
     review: String
   });
   const Fruit = mongoose.model("Fruit", fruitSchema);
