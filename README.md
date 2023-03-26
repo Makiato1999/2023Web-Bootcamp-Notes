@@ -676,4 +676,66 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       - since we need to use await, so make sure to wrap this code in an ```async``` function
 3. build-in validators
    - [validation](https://mongoosejs.com/docs/validation.html)
-   - 
+   - required
+      - it is similar to exception?
+      ```
+      const fruitSchema = new mongoose.Schema({
+         name: {
+            type: String,
+            required: [true, 'please check your data entry, no name specified']
+         },
+         rating: {
+            type: Number,
+            min: 1,
+            max: 10
+         },
+         review: String
+      });
+      ```
+      - when I forget the fruit name on purpose, the program reports an error
+      ```
+      xiexiaoran@wpa-6-382 FruitsProject % node app.js
+      Error: Fruit validation failed: name: please check your data entry, no name specified 
+         at ValidationError.inspect (/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/27. Mongoose/FruitsProject/node_modules/mongoose/lib/error/validation.js:50:26)
+      ```
+4. CRUD
+   - create and read are simple, as we showed in code
+   - [update](https://mongoosejs.com/docs/api/model.html#Model.updateOne()), there is no good example, and new version mongoose doesn't support callback function as its parameter (especially in 'options')
+   - delete
+   - relationship
+      - update the schema
+         ```
+         ...
+         const personSchema = new mongoose.Schema({
+            name: String,
+            age: Number,
+            favouriteFruit: fruitSchema
+         });
+         ```
+      - update the document
+         ```
+         ...
+         const amy = new Person({
+            name: "Amy",
+            age: 24,
+            favouriteFruit: grape
+         });
+         await amy.save();
+         ```
+      - results
+         ```
+         {
+            _id: ObjectId("641ff45fcab8dbeeb7900682"),
+            name: 'Amy',
+            age: 24,
+            favouriteFruit: {
+               name: 'Grape',
+               rating: 7,
+               review: 'i will buy them again, pretty good',
+               _id: ObjectId("641ff45fcab8dbeeb7900680"),
+               __v: 0
+            },
+            __v: 0
+         }
+         ```
+5. sss

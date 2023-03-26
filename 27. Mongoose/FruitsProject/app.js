@@ -6,7 +6,10 @@ async function main() {
   await mongoose.connect('mongodb://localhost:27017/fruitsDB', { useNewUrlParser: true});
 
   const fruitSchema = new mongoose.Schema({
-    name: String,
+    name: {
+      type: String,
+      required: [true, 'please check your data entry, no name specified']
+    },
     rating: {
       type: Number,
       min: 1,
@@ -20,19 +23,22 @@ async function main() {
     rating: 8,
     review: "Delicious"
   });
-  await fruit.save();
+  // create fruits collection(database) and insert Apple document(table)
+  //await fruit.save();
   
   
   const personSchema = new mongoose.Schema({
     name: String,
-    age: Number
+    age: Number,
+    favouriteFruit: fruitSchema
   });
   const Person = mongoose.model("Person", personSchema);
   const person = new Person({
     name: "John",
     age: 27
   });
-  await person.save();
+  // create people collection(database) and insert John document(table)
+  //await person.save();
 
   const kiwi = new Fruit({
     name: "Kiwi",
@@ -52,13 +58,58 @@ async function main() {
   const fruits_arr = [kiwi, peach, banana];
   // since mongoose some query cannot accept callback function, so follow the below link
   // https://stackoverflow.com/questions/75586474/mongoose-stopped-accepting-callbacks-for-some-of-its-functions
-  await Fruit.insertMany(fruits_arr);
+  // insert many fruits
+  //await Fruit.insertMany(fruits_arr);
+
+
+  // relationship
+  const grape = new Fruit({
+    name: "Grape",
+    rating: 7,
+    review: "i will buy them again, pretty good"
+  });
+  //await grape.save();
+
+  const amy = new Person({
+    name: "Amy",
+    age: 24,
+    favouriteFruit: grape
+  });
+  //await amy.save();
+  // one more practice
+  const mango = new Fruit({
+    name: "Mango",
+    rating: 7,
+    review: "A taste of the tropics"
+  });
+  await mango.save();
+  await Person.updateOne({name: 'John'}, {favouriteFruit: mango})
+
+
+
 
   const find_res = await Fruit.find();
+  // show all documents
   find_res.forEach(fruit => {
+    console.log(fruit.name+":");
     console.log(fruit);
-    console.log(fruit.name);
   });
+
+  /* update one fruit name
+  await Fruit.updateOne({
+    _id: '641fec26a1261ebe990df8c7'
+  }, { 
+    name: 'Pineapple' 
+  });
+  */
+
+  /*
+  await Fruit.deleteOne({
+    _id: '641fec26a1261ebe990df8c7'
+  }, { 
+    name: 'Pineapple' 
+  });
+  */
 
   mongoose.connection.close();
 }
