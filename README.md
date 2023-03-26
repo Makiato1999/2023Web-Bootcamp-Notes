@@ -660,7 +660,20 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 1. installalation
    - simple, install by ```npm i mongoose```
 2. issues
-   - since different version (version updated recently), there are some problems, such as query functions can't hold callback function in it
+   - since there are different versions (version has updated recently), such as query functions can't acccept callback function
+      ```
+      xiexiaoran@wpa-6-382 FruitsProject % node app.js
+      /Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/27. Mongoose/FruitsProject/node_modules/mongoose/lib/model.js:2966
+      		throw new MongooseError('Model.insertMany() no longer accepts a callback');
+          	^
+		MongooseError: Model.insertMany() no longer accepts a callback 
+		at Function.insertMany (/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/27. Mongoose/FruitsProject/node_modules/mongoose/lib/model.js:2966:11)
+		at main (/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/27. Mongoose/FruitsProject/app.js:49:9)
+		at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      Node.js v18.14.2
+      ```
       - deal with by using  ```await```, more practical details on this [link](https://stackoverflow.com/questions/75586474/mongoose-stopped-accepting-callbacks-for-some-of-its-functions)
       - since we need to use await, so make sure to wrap this code in an ```async``` function
-3. sss
+3. build-in validators
+   - [validation](https://mongoosejs.com/docs/validation.html)
+   - 
