@@ -29,32 +29,39 @@ const item_3 = new Item({
     item: "<-- click on this checkbox to delete the item"
 });
 const defaultitems = [item_1, item_2, item_3];
-let items = [];
 let workItems = [];
 
-main().catch(err => console.log(err));
-async function main() {
+db_init().catch(err => console.log(err));
+async function db_init() {
     try {
         await mongoose.connect('mongodb://localhost:27017/todolistDB', {useNewUrlParser: true});
-        items = await Item.insertMany(defaultitems);
     } catch (error) {
         console.error(error);
     }
-    console.log(items);
-
+    /*
     try {
         await mongoose.connection.close();
         console.log('Mongoose connection closed.');
     } catch (error) {
         console.error('Error closing Mongoose connection:', error);
     }
+    */
 }
 
-app.get("/", (req, res)=>{
-    res.render("list", {
-        listTitle: "Today",
-        newItems: items
-    });
+app.get("/", async (req, res)=>{
+    let query = Item.find();
+    let items = await query.exec();
+    console.log("db.find(): \n" + items + "\n\n");
+    if (items.length === 0) {
+        // if database is empty, insert default items
+        await Item.insertMany(defaultitems);
+        res.redirect("/");
+    } else {
+        res.render("list", {
+            listTitle: "Today",
+            newItems: items
+        });
+    }
 });
 
 app.post("/", (req, res)=>{
