@@ -672,7 +672,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 		at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
       Node.js v18.14.2
       ```
-      - deal with by using  ```await```, more practical details on this [link](https://stackoverflow.com/questions/75586474/mongoose-stopped-accepting-callbacks-for-some-of-its-functions)
+      - deal with by using  ```await```, more practical details on this [link](https://stackoverflow.com/questions/75586474/mongoose-stopped-accepting-callbacks-for-some-of-its-functions) or read the newest [documentation](https://mongoosejs.com/docs/api/model.html) of mongoose
       - since we need to use await, so make sure to wrap this code in an ```async``` function
 3. build-in validators
    - [validation](https://mongoosejs.com/docs/validation.html)
@@ -738,7 +738,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
             __v: 0
          }
          ```
-5. I use async in this project since the newest mongoose(version 7.0.3) didn't accept call back function any more, but if your version is old(version 5.13.16), call back function is still working well
+5. I use async in this project since the newest mongoose(version 7.0.3) didn't accept call back function any more, but if your version is old(version 5.13.16), call back function is still working well, more details on mongoose [documentation](https://mongoosejs.com/docs/api/model.html)
    - there is an example for different version in todolist-v2
    - version 5.13.16, with call back function
       ```
@@ -770,7 +770,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       });
 
       ```
-      - version 7.0.3, with async function, this is more intuitive
+   - version 7.0.3, with async function, this is more intuitive
       ```
       app.get("/", async (req, res)=>{
          let query = Item.find();
