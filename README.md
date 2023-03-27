@@ -770,7 +770,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       });
 
       ```
-      - version 7.0.3, with async function, this is more intuitive
+   - version 7.0.3, with async function, this is more intuitive
       ```
       app.get("/", async (req, res)=>{
          let query = Item.find();
