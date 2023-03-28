@@ -788,4 +788,5 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
          }
       });
       ```
-6. ssss
+6. What is the difference between findByIdAndRemove and findByIdAndDelete in mongoose?
+   - pretty hilarious [explanation](https://stackoverflow.com/questions/54081114/what-is-the-difference-between-findbyidandremove-and-findbyidanddelete-in-mongoo)

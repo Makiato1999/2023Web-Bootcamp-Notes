@@ -72,6 +72,17 @@ app.post("/", async (req, res)=>{
     res.redirect('/');
 });
 
+app.post("/delete", async (req, res)=>{
+    let item_id = req.body.selectedItem;
+    try {
+        await Item.findByIdAndDelete(item_id); 
+    } catch (error) {
+        console.error(err);
+        res.status(500).send("Error inserting default items into database.");
+    }
+    res.redirect('/');
+});
+
 app.get("/work", (req, res)=>{
     res.render("list", {
         listTitle: "Work List",
