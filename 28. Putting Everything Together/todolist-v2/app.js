@@ -64,16 +64,12 @@ app.get("/", async (req, res)=>{
     }
 });
 
-app.post("/", (req, res)=>{
-    console.log(req.body);
-    let item = req.body.inputNewItem;
-    if (req.body.list === "Work List") {
-        workItems.push(item);
-        res.redirect("/work");
-    } else {
-        items.push(item);
-        res.redirect("/");
-    }
+app.post("/", async (req, res)=>{
+    let newItem = new Item({
+        item: req.body.inputNewItem
+    });
+    await newItem.save();
+    res.redirect('/');
 });
 
 app.get("/work", (req, res)=>{
