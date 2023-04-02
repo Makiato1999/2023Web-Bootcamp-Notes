@@ -28,8 +28,17 @@ const item_2 = new Item({
 const item_3 = new Item({
     item: "<-- click on this checkbox to delete the item"
 });
-const defaultitems = [item_1, item_2, item_3];
+const defaultItems = [item_1, item_2, item_3];
+
+const listSchema = new mongoose.Schema({
+    name: String,
+    items: [itemSchema]
+});
+const List = mongoose.model("List", listSchema);
+
+
 let workItems = [];
+
 
 db_init().catch(err => console.log(err));
 async function db_init() {
@@ -54,7 +63,7 @@ app.get("/", async (req, res)=>{
     console.log("db.find(): \n" + items + "\n\n");
     if (items.length === 0) {
         // if database is empty, insert default items
-        await Item.insertMany(defaultitems);
+        await Item.insertMany(defaultItems);
         res.redirect("/");
     } else {
         res.render("list", {
@@ -65,10 +74,13 @@ app.get("/", async (req, res)=>{
 });
 
 app.post("/", async (req, res)=>{
-    let newItem = new Item({
-        item: req.body.inputNewItem
-    });
-    await newItem.save();
+    // input can not be empty
+    if (req.body.inputNewItem !== '') {
+        let newItem = new Item({
+            item: req.body.inputNewItem
+        });
+        await newItem.save();
+    }
     res.redirect('/');
 });
 
@@ -81,6 +93,36 @@ app.post("/delete", async (req, res)=>{
         res.status(500).send("Error inserting default items into database.");
     }
     res.redirect('/');
+});
+
+app.get("/:listCategory", async (req, res)=>{
+    const listCategory = req.params.listCategory;
+
+    // find if the database name has existed
+    try {
+        let foundList = await List.findOne({ name: listCategory}).exec();
+        if (foundList === null) {
+            // create a new list
+            console.log("This database doesn't exist, we create it right now!");
+            const list = new List({
+                name: listCategory,
+                items: defaultItems
+            });
+            await list.save();
+            res.redirect('/'+listCategory);
+        } else {
+            // show this existing list
+            console.log("This database exists!");
+            console.log(foundList);
+            res.render("list", {
+                listTitle: foundList.name,
+                newItems: foundList.items
+            });
+        }
+    } catch (error) {
+        console.error(err);
+        res.status(500).send("Error in mongoose model api findOne()");
+    }
 });
 
 app.get("/work", (req, res)=>{
