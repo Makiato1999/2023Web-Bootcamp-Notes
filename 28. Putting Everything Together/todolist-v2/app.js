@@ -75,13 +75,26 @@ app.get("/", async (req, res)=>{
 
 app.post("/", async (req, res)=>{
     // input can not be empty
-    if (req.body.inputNewItem !== '') {
+    let itemContent = req.body.inputNewItem;
+    let listCategory = req.body.list;
+    console.log("listCategory: "+listCategory);
+
+    if (itemContent !== '') {
         let newItem = new Item({
-            item: req.body.inputNewItem
+            item: itemContent
         });
-        await newItem.save();
+        
+        if (listCategory === 'Today') {
+            await newItem.save();
+            res.redirect('/');
+        } else {
+            let foundList = await List.findOne({ name: listCategory}).exec();
+            console.log(foundList.items);
+            await foundList.items.push(newItem);
+            await foundList.save();
+            res.redirect('/'+listCategory);
+        }
     }
-    res.redirect('/');
 });
 
 app.post("/delete", async (req, res)=>{
