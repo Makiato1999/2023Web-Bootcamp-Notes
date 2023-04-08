@@ -28,6 +28,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- [mongodb shell (mongosh)](#anchor_26_2)<br/>
 	- [connect to mongodb](#anchor_26_3)<br/>
 9. [Mongoose](#anchor_27)<br/>
+	- [CRUD](#anchor_27_1)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -698,7 +699,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       Error: Fruit validation failed: name: please check your data entry, no name specified 
          at ValidationError.inspect (/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/27. Mongoose/FruitsProject/node_modules/mongoose/lib/error/validation.js:50:26)
       ```
-4. CRUD
+4. CRUD<a name="anchor_27_1"></a>
    - create and read are simple, as we showed in code
    - [update](https://mongoosejs.com/docs/api/model.html#Model.updateOne()), there is no good example, and new version mongoose doesn't support callback function as its parameter (especially in 'options')
    - delete
@@ -790,3 +791,5 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       ```
 6. What is the difference between findByIdAndRemove and findByIdAndDelete in mongoose?
    - pretty hilarious [explanation](https://stackoverflow.com/questions/54081114/what-is-the-difference-between-findbyidandremove-and-findbyidanddelete-in-mongoo)
+7. delete element in list
+   - How to remove array element in mongodb?
