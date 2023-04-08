@@ -22,7 +22,9 @@
 4. open the browser and input the url
     ```
     http://localhost:3000/Home
-
+    
+    or
+    
     http://localhost:3000/NameWhatYouWant
     ```
 
