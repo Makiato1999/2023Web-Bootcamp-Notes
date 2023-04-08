@@ -1,11 +1,7 @@
 // jshint esversion:6
 const express = require("express");
 const bodyParse = require("body-parser");
-/* we temporarily don't consider the date in todolist-v1
-const getDate = require("./date");
-const date = require(__dirname+"/date.js");
-let day = date.getDay();
-*/
+const _ = require('lodash');
 const mongoose = require("mongoose");
 const app = express();
 
@@ -14,7 +10,12 @@ app.use(bodyParse.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 
-// initialize the database
+/*
+    initialize database collections(tables)
+*/
+/*
+    item structure
+*/
 const itemSchema = new mongoose.Schema({
     item: String
 });
@@ -29,7 +30,9 @@ const item_3 = new Item({
     item: "<-- click on this checkbox to delete the item"
 });
 const defaultItems = [item_1, item_2, item_3];
-
+/*
+    list structure
+*/
 const listSchema = new mongoose.Schema({
     name: String,
     items: [itemSchema]
@@ -37,9 +40,9 @@ const listSchema = new mongoose.Schema({
 const List = mongoose.model("List", listSchema);
 
 
-let workItems = [];
-
-
+/*
+    connect to database
+*/
 db_init().catch(err => console.log(err));
 async function db_init() {
     try {
@@ -47,16 +50,10 @@ async function db_init() {
     } catch (error) {
         console.error(error);
     }
-    /*
-    try {
-        await mongoose.connection.close();
-        console.log('Mongoose connection closed.');
-    } catch (error) {
-        console.error('Error closing Mongoose connection:', error);
-    }
-    */
 }
-
+/*
+    default url route, default page if list is default 
+*/
 app.get("/", async (req, res)=>{
     let query = Item.find();
     let items = await query.exec();
@@ -72,7 +69,9 @@ app.get("/", async (req, res)=>{
         });
     }
 });
-
+/*
+    add new item in current list
+*/
 app.post("/", async (req, res)=>{
     // input can not be empty
     let itemContent = req.body.inputNewItem;
@@ -96,21 +95,35 @@ app.post("/", async (req, res)=>{
         }
     }
 });
-
+/*
+    delete one item in list
+*/
 app.post("/delete", async (req, res)=>{
     let item_id = req.body.selectedItem;
+    let listCategory = req.body.listCategory;
     try {
-        await Item.findByIdAndDelete(item_id); 
+        if (listCategory === "Today") {
+            await Item.findByIdAndDelete(item_id); 
+            res.redirect('/');
+        } else {
+            let list = await List.findOneAndUpdate(
+                {name: listCategory}, 
+                {$pull: {items: {_id: item_id}}},
+                {new: true}
+            );
+            await list.save();
+            res.redirect('/'+listCategory);
+        }
     } catch (error) {
         console.error(err);
         res.status(500).send("Error inserting default items into database.");
     }
-    res.redirect('/');
 });
-
+/*
+    present items of current list
+*/
 app.get("/:listCategory", async (req, res)=>{
-    const listCategory = req.params.listCategory;
-
+    const listCategory = _.capitalize(req.params.listCategory);
     // find if the database name has existed
     try {
         let foundList = await List.findOne({ name: listCategory}).exec();
@@ -138,26 +151,10 @@ app.get("/:listCategory", async (req, res)=>{
     }
 });
 
-app.get("/work", (req, res)=>{
-    res.render("list", {
-        listTitle: "Work List",
-        newItems: workItems
-    });
-});
 
-/* 
-app.post("/work", (req, res)=>{
-    let workItem = req.body.inputNewItem;
-    workItems.push(workItem);
-
-    res.redirect("/work");
-});
+/*
+    open local server with port 3000
 */
-
-app.get("/about", (req, res)=>{
-    res.render("about");
-});
-
 app.listen(3000, ()=>{
     console.log("Server is running on port 3000");
 });
