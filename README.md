@@ -792,4 +792,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 6. What is the difference between findByIdAndRemove and findByIdAndDelete in mongoose?
    - pretty hilarious [explanation](https://stackoverflow.com/questions/54081114/what-is-the-difference-between-findbyidandremove-and-findbyidanddelete-in-mongoo)
 7. delete element in list
-   - How to remove array element in mongodb?
+   - How to remove array element in mongodb? [follow this](https://stackoverflow.com/questions/16959099/how-to-remove-array-element-in-mongodb)
+   	```
+	Model.findOneAndUpdate()
+	```
+   - sss
