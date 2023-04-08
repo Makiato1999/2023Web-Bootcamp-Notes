@@ -1,5 +1,5 @@
 ### To Do List
-<img src="demo/1.png"  width="800" height="400">
+<img src="demo/1.png"  width="650" height="400">
 
 #### How to run it on local server
 1. open the local mongodb server
