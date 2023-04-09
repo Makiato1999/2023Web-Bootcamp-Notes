@@ -29,6 +29,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- [connect to mongodb](#anchor_26_3)<br/>
 9. [Mongoose](#anchor_27)<br/>
 	- [CRUD](#anchor_27_1)<br/>
+9. [Deploying Your Web Application](#anchor_29)<br/>
+	- [MongoDB Atlas admin](#anchor_29_1)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -796,4 +798,9 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    	```
 	Model.findOneAndUpdate()
 	```
-   - sss
+## Deploying Your Web Application<a name="anchor_29"></a>
+1. MongoDB Atlas admin<a name="anchor_29_1"></a>
+	```
+	Username: admin-Shawn
+	Password: Shawn990610
+	```
