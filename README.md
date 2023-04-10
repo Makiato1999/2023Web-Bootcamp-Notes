@@ -801,6 +801,6 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 ## Deploying Your Web Application<a name="anchor_29"></a>
 1. MongoDB Atlas admin<a name="anchor_29_1"></a>
 	```
-	Username: admin-Shawn
-	Password: Shawn990610
+	Username: admin-shawn
+	Password: shawn990610
 	```
