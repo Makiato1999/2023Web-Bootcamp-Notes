@@ -58,14 +58,15 @@ form.item {
 
 button {
   min-height: 50px;
-  width: 50px;
+  min-width: 50px;
   border-radius: 50%;
   border-color: transparent;
   background-color: #82b78f;
   color: #fff;
   font-size: 30px;
-  padding-bottom: 6px;
   border-width: 0;
+  text-align: center;
+  margin-right: 5%;
 }
 
 input[type="text"] {
