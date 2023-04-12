@@ -46,11 +46,18 @@ async function db_init() {
     }
 }
 
-app.get("/", (req, res)=>{
-  res.render("home", {
-    homeStartingContent: homeStartingContent,
-    posts: posts
-  });
+app.get("/", async (req, res)=>{
+  try {
+    let query = Post.find();
+    let foundPosts = await query.exec();
+    res.render("home", {
+      homeStartingContent: homeStartingContent,
+      foundPosts: foundPosts
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error in mongoose model api find()");
+  }
 });
 
 app.get("/about", (req, res)=>{
@@ -82,23 +89,17 @@ app.post("/compose", async (req, res)=>{
   res.redirect("/");
 });
 
-app.get("/posts/:postName", (req, res)=>{
-  let requestedTitle = _.lowerCase(req.params.postName);
-
-  posts.forEach((post)=>{
-    let storedTitle = _.lowerCase(post.title);
-
-    if (storedTitle === requestedTitle) {
-      console.log("Match found!");
-      res.render("post", {
-        post: post
-      });
-    }
-  });
+app.get("/posts/:postID", async (req, res)=>{
+  try {
+    let foundPost = await Post.findOne({ _id: req.params.postID });
+    res.render("post", {
+      post: foundPost
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error in mongoose model api findOne()");
+  }
 });
-
-
-
 
 
 app.listen(3000, function() {
