@@ -813,13 +813,21 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 		- i use ```mongodb+srv://admin-shawn:<password>@cluster0.whfip5e.mongodb.net/``` here, not sure about that
    	- if it works, and you would like to run it on local server, just run ```node app.js```, but you don't need to connect to local database anymore
 3. deploy application on Heroku<a name="anchor_29_3"></a>
+	- offical documentation and some noticed tips
+		- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+		- [deploy nodejs app](https://devcenter.heroku.com/articles/deploying-nodejs)
+		- tips
+			- npm installed
+			- package.json
+			- node version
+			- .gitignore
 	- since i put all codebases on github, so my local git is on this repository
 		- which is ```/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/```
 		- but i only want to push the ```/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/29. Deploying Your Web Application/todolist-v3``` to the heroku server, how can i make it?
 	- first, i create a new local repository(folder), i name it as ```GitHub-localhost```, and i put all code into it
 		- so current my pathway is ```/Users/xiexiaoran/Documents/GitHub-localhost/2023Web-Bootcamp-Notes/29. Deploying Your Web Application/todolist-v3```
 	- then i create the git by ```git init```, and i get the master branch on the above pathway, and this is my original repository location
-	- afterthat, use ```heroku create ``` to create the application on heroku
+	- afterthat, use ```heroku login```, and then use ```heroku create ``` to create the application on heroku
 	  ```
 	  xiexiaoran@MacBook-Pro todolist-v3 % heroku create 
  	  ›   Warning: heroku update available from 7.68.2 to 7.68.3.
