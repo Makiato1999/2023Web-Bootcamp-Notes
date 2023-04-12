@@ -31,6 +31,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- [CRUD](#anchor_27_1)<br/>
 9. [Deploying Your Web Application](#anchor_29)<br/>
 	- [MongoDB Atlas admin](#anchor_29_1)<br/>
+	- [connect to MongoDB Atlas](#anchor_29_2)<br/>
+	- [deploy application on Heroku](#anchor_29_3)<br/>
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -804,3 +806,70 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	Username: admin-shawn
 	Password: shawn990610
 	```
+2. connect to MongoDB Atlas<a name="anchor_29_2"></a>
+	- go to ```network access``` to set the perimission to all ip address
+   	- go to ```database```, then click on ```connect```, choose ```connect your application```
+   		- copy the ```mongodb+srv://admin-shawn:<password>@cluster0.whfip5e.mongodb.net/?retryWrites=true&w=majority``` to your app.js and update it
+		- i use ```mongodb+srv://admin-shawn:<password>@cluster0.whfip5e.mongodb.net/``` here, not sure about that
+   	- if it works, and you would like to run it on local server, just run ```node app.js```, but you don't need to connect to local database anymore
+3. deploy application on Heroku<a name="anchor_29_3"></a>
+	- offical documentation and some noticed tips
+		- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+		- [deploy nodejs app](https://devcenter.heroku.com/articles/deploying-nodejs)
+		- tips
+			- npm installed
+			- package.json
+			- node version
+			- .gitignore
+	- since i put all codebases on github, so my local git is on this repository
+		- which is ```/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/```
+		- but i only want to push the ```/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/29. Deploying Your Web Application/todolist-v3``` to the heroku server, how can i make it?
+	- first, i create a new local repository(folder), i name it as ```GitHub-localhost```, and i put all code into it
+		- so current my pathway is ```/Users/xiexiaoran/Documents/GitHub-localhost/2023Web-Bootcamp-Notes/29. Deploying Your Web Application/todolist-v3```
+	- then i create the git by ```git init```, and i get the master branch on the above pathway, and this is my original repository location
+	- afterthat, use ```heroku login```, and then use ```heroku create ``` to create the application on heroku
+	  ```
+	  xiexiaoran@MacBook-Pro todolist-v3 % heroku create 
+ 	  ›   Warning: heroku update available from 7.68.2 to 7.68.3.
+	  Creating app... done, ⬢ floating-brushlands-29395
+	  https://floating-brushlands-29395.herokuapp.com/ | https://git.heroku.com/floating-brushlands-29395.git
+	  ```
+	  we can use the left link to access our application later
+	- and then we need to create the remote repository
+		- use ```heroku git:remote -a floating-brushlands-29395```, the name(```floating-brushlands-29395```) is provided by the heroku create command
+		- use ```git remote -v``` to check the remote repository location
+	- so far, we have the original and remote repository, next step is pushing whole codebase on the server
+		- use ```git add .``` to collect all updates
+		- use ```git commit -m ""``` to commit updates to stage
+		- since the original branch is called master, we use ```git push heroku master``` to push whole codebase
+		  ```
+		  xiexiaoran@MacBook-Pro todolist-v3 % git push heroku master           
+			Enumerating objects: 5, done.
+			Counting objects: 100% (5/5), done.
+			Delta compression using up to 8 threads
+			Compressing objects: 100% (3/3), done.
+			Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+			Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+			remote: Updated 13 paths from bb056be
+			remote: Compressing source files... done.
+			remote: Building source:
+			remote: 
+			remote: -----> Building on the Heroku-22 stack
+			remote: -----> Using buildpack: heroku/nodejs
+			...
+			remote: -----> Build succeeded!
+			remote: -----> Discovering process types
+			remote:        Procfile declares types -> web
+			remote: 
+			remote: -----> Compressing...
+			remote:        Done: 46.2M
+			remote: -----> Launching...
+			remote:        Released v5
+			remote:        https://immense-tor-46027.herokuapp.com/ deployed to Heroku
+			remote: 
+			remote: Verifying deploy... done.
+			To https://git.heroku.com/immense-tor-46027.git
+   				9382885..2b1c935  master -> master
+		  ```
+	- access the application by the link which heroku provides, here example is ```https://immense-tor-46027.herokuapp.com/```
+4. sss
