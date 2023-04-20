@@ -33,6 +33,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- [MongoDB Atlas admin](#anchor_29_1)<br/>
 	- [connect to MongoDB Atlas](#anchor_29_2)<br/>
 	- [deploy application on Heroku](#anchor_29_3)<br/>
+9. [Build Your Own RESTful API From Scratch](#anchor_30)<br/>
+
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
    - callback function is passed as an argument to another function and is invoked by that function at a later point in time
@@ -872,4 +874,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    				9382885..2b1c935  master -> master
 		  ```
 	- access the application by the link which heroku provides, here example is ```https://immense-tor-46027.herokuapp.com/```
-4. sss
+## Build Your Own RESTful API From Scratch<a name="anchor_30"></a>
+1. Http request verbs
+	- difference between PUT and PATCH
+		- The main difference between PUT and PATCH methods is that PUT is used to update or replace an entire resource with new data, while PATCH is used to update a portion of a resource with new data. Additionally, PUT is idempotent, while PATCH is not.
+2. sss
