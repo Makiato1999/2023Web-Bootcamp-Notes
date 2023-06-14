@@ -22,6 +22,35 @@ const articleSchema = {
 }
 const Article = mongoose.model("Article", articleSchema);
 
+app.route('/articles')
+.get(async (req , res)=>{
+    let query = Article.find();
+    let items = await query.exec();
+    console.log("db.find(): \n" + items + "\n\n");
+    res.send(items);
+})
+.post(async (req , res)=>{
+    let newArticle = new Article({
+        title: req.body.title,
+        content: req.body.content
+    });
+    try {
+        await newArticle.save();
+        res.send("Successfully added a new article.")
+    } catch (error) {
+        res.send(error);
+        console.error(error);
+    }
+})
+.delete(async (req, res)=>{
+    try {
+        await Article.deleteMany();
+        res.send("Successfully deleted all articles.")
+    } catch (error) {
+        res.send(error);
+    }
+});
+/*
 app.get('/articles' , async (req , res)=>{
     let query = Article.find();
     let items = await query.exec();
@@ -33,8 +62,69 @@ app.post('/articles' , async (req , res)=>{
         title: req.body.title,
         content: req.body.content
     });
-    await newArticle.save();
+    try {
+        await newArticle.save();
+        res.send("Successfully added a new article.")
+    } catch (error) {
+        res.send(error);
+        console.error(error);
+    }
 });
+app.delete('/articles', async (req, res)=>{
+    try {
+        await Article.deleteMany();
+        res.send("Successfully deleted all articles.")
+    } catch (error) {
+        res.send(error);
+    }
+});
+*/
+
+app.route('/articles/:articleTitle')
+.get(async (req , res)=>{
+    let query = Article.findOne({title: req.params.articleTitle});
+    try {
+        let item = await query.exec();
+        console.log("db.findOne(): \n" + item + "\n\n");
+        res.send(item);
+    } catch (error) {
+        res.send(error);
+    }
+})
+.put(async (req , res)=>{
+    try {
+        await Article.updateOne(
+            {title: req.params.articleTitle},
+            {title: req.body.title, content: req.body.content}
+        );
+        res.send("Successfully put the article.")
+    } catch (error) {
+        res.send(error);
+    }
+})// put will update whole/entire object
+.patch(async (req , res)=>{
+    try {
+        await Article.updateOne(
+            {title: req.params.articleTitle},
+            // {title: req.body.title, content: req.body.content}
+            {$set: req.body}
+        );
+        res.send("Successfully patch the article field.")
+    } catch (error) {
+        res.send(error);
+    }
+})// patch only update the specific field in the object
+.delete(async (req , res)=>{
+    try {
+        await Article.deleteOne(
+            {title: req.params.articleTitle}
+        );
+        res.send("Successfully delete the specific article field.")
+    } catch (error) {
+        res.send(error);
+    }
+});
+
 
 app.listen(3000, ()=>{
     console.log("Server is running on port 3000");
