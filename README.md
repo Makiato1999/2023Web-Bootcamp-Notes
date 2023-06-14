@@ -34,6 +34,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- [connect to MongoDB Atlas](#anchor_29_2)<br/>
 	- [deploy application on Heroku](#anchor_29_3)<br/>
 9. [Build Your Own RESTful API From Scratch](#anchor_30)<br/>
+9. [Authentication & Security](#anchor_37)<br/>
 
 ## Advanced Javascript and DOM Manipulation<a name="anchor_13"></a>
 1. difference between  callback function and normal function
@@ -883,3 +884,5 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    - PATCH is used to partially update an existing resource by sending specific changes.
    - PUT replaces, PATCH modifies.
 
+## Authentication & Security<a name="anchor_37"></a>
+1. ssss
