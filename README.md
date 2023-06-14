@@ -879,7 +879,14 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 1. Http request verbs
 	- difference between PUT and PATCH
 		- The main difference between PUT and PATCH methods is that PUT is used to update or replace an entire resource with new data, while PATCH is used to update a portion of a resource with new data. Additionally, PUT is idempotent, while PATCH is not.
-2. difference between patch and put
+2. review mongodb commands
+	- update a document by adding a new attribute using the $set operator within an update operation
+	```
+	db.articles.insertOne({ title: "REST" }) //_id: ObjectId("648838e28e9f3d44ea6cb16a"
+	
+	db.articles.updateOne({_id: ObjectId("648838e28e9f3d44ea6cb16a")}, {$set: {content: "REST is short for REpresentational State Transfer. It is an architectural style for designing APIs"} })
+	```
+3. difference between patch and put
    - PUT is used to replace the entire resource or create a new resource.
    - PATCH is used to partially update an existing resource by sending specific changes.
    - PUT replaces, PATCH modifies.
