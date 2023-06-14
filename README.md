@@ -878,4 +878,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 1. Http request verbs
 	- difference between PUT and PATCH
 		- The main difference between PUT and PATCH methods is that PUT is used to update or replace an entire resource with new data, while PATCH is used to update a portion of a resource with new data. Additionally, PUT is idempotent, while PATCH is not.
-2. sss
+2. difference between patch and put
+   - PUT is used to replace the entire resource or create a new resource.
+   - PATCH is used to partially update an existing resource by sending specific changes.
+   - PUT replaces, PATCH modifies.
+
