@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
 const encrypt = require("mongoose-encryption");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const app = express();
 
@@ -23,9 +25,9 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String
 });
-//var secret = process.env.SOME_LONG_UNGUESSABLE_STRING;
+// var secret = process.env.SOME_LONG_UNGUESSABLE_STRING;
 // Encrypt Only Certain Fields
-userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["password"]});
+// userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["password"]});
 
 
 const User = mongoose.model("User", userSchema);
@@ -39,7 +41,24 @@ app.get("/login", async(req, res)=>{
 app.get("/register", async(req, res)=>{
     res.render("register");
 });
-app.post("/register", async(req, res)=>{
+app.post("/register", (req, res)=>{// check test2 in database
+    const plaintextPassword = req.body.password;
+    bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
+        // Store hash in your password DB.
+        const newUser = new User({
+            email: req.body.username,
+            password: hash
+        });
+        try {
+            await newUser.save();
+            res.render("secrets");
+            console.log("Successfully registered a new user.");
+        } catch (error) {
+            res.send(error);
+            console.error(error);
+        }
+    });
+    /*
     const newUser = new User({
         email: req.body.username,
         password: req.body.password
@@ -52,9 +71,26 @@ app.post("/register", async(req, res)=>{
         res.send(error);
         console.error(error);
     }
+    */
 });
 app.post("/login", async(req, res)=>{
+    try {
+        const query = User.findOne({email: req.body.username});
+        let item = await query.exec();
+        console.log("db.findOne(): \n" + item + "\n\n");
+        if (item) {
+            bcrypt.compare(req.body.password, item.password, function(err, result) {
+                // result == true
+                if (result === true) {
+                    res.render("secrets");
+                }
+            });
+        }
+    } catch (error) {
+        res.send(error);
+    }
 
+    /*
     const query = User.findOne({email: req.body.username});
     try {
         let item = await query.exec();
@@ -67,6 +103,7 @@ app.post("/login", async(req, res)=>{
     } catch (error) {
         res.send(error);
     }
+    */
 });
 
 app.listen(3000, ()=>{

@@ -892,4 +892,47 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    - PUT replaces, PATCH modifies.
 
 ## Authentication & Security<a name="anchor_37"></a>
-1. ssss
+1. use bcrypt.js
+   - details on [documantation](https://www.npmjs.com/package/bcrypt)
+   - in register stage, hash the password
+      ```
+      app.post("/register", (req, res)=>{// check test2 in database
+      const plaintextPassword = req.body.password;
+      bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
+            // Store hash in your password DB.
+            const newUser = new User ({
+               email: req.body.username,
+               password: hash
+            });
+            try {
+               await newUser.save();
+               res.render("secrets");
+               console.log("Successfully registered a new user.");
+            } catch (error) {
+               res.send(error);
+               console.error(error);
+            }
+         });
+      });
+      ```
+   - in login stage, check the password
+      ```
+      app.post("/login", async(req, res)=>{
+         try {
+            const query = User.findOne({email: req.body.username});
+            let item = await query.exec();
+            console.log("db.findOne(): \n" + item + "\n\n");
+            if (item) {
+                  bcrypt.compare(req.body.password, item.password, function(err, result) {
+                     // result == true
+                     if (result === true) {
+                        res.render("secrets");
+                     }
+                  });
+            }
+         } catch (error) {
+            res.send(error);
+         }
+      });
+      ```
+2. sss
