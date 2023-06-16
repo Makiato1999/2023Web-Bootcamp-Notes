@@ -893,12 +893,12 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 
 ## Authentication & Security<a name="anchor_37"></a>
 1. use bcrypt.js
-   - details on [documantation](https://www.npmjs.com/package/bcrypt)
+   - details on [documentation](https://www.npmjs.com/package/bcrypt)
    - in register stage, hash the password
       ```
       app.post("/register", (req, res)=>{// check test2 in database
-      const plaintextPassword = req.body.password;
-      bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
+         const plaintextPassword = req.body.password;
+         bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
             // Store hash in your password DB.
             const newUser = new User ({
                email: req.body.username,
@@ -935,4 +935,24 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
          }
       });
       ```
-2. sss
+2. session and cookie by using 'passport'
+   - express-session package [documentation](https://www.npmjs.com/package/express-session)
+   - when i use ```passport.authenticate```, i run the server and get the problem
+      ```
+      xiexiaoran@MacBook-Pro Secrets % node app.js
+      Server is running on port 3000
+      Error: Failed to serialize user into session
+      at pass (/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/37. Authentication and Security/Secrets/node_modules/passport/lib/authenticator.js:278:19)
+      at serialized (/Users/xiexiaoran/Documents/GitHub/2023Web-Bootcamp-Notes/37. Authentication and Security/Secrets/node_modules/passport/lib/authenticator.js:283:7)
+      ...
+      ```
+   - solve this issue by following the [instructions](https://stackoverflow.com/questions/19948816/passport-js-error-failed-to-serialize-user-into-session)
+      ```
+      passport.serializeUser(function(user, done) {
+         done(null, user);
+      });
+      passport.deserializeUser(function(user, done) {
+         done(null, user);
+      });
+      ```
+3. sss
