@@ -40,9 +40,10 @@ mongoose.connect(url, { useNewUrlParser: true});
 
 const userSchema = new mongoose.Schema({
     email: String,
-    password: String
+    password: String,
+    secret: String
 });
-
+ 
 // ********** cookie and session part ***********
 userSchema.plugin(passportLocalMongoose);
 // ********** *********** *********** ***********
@@ -107,11 +108,16 @@ app.post("/register", (req, res)=>{
    // ********** *********** *********** ***********
 });
 // ********** cookie and session part ***********
-app.get("/secrets", (req, res)=>{
+app.get("/secrets", async (req, res)=>{
+    /*
     if (req.isAuthenticated()) {
         res.render("secrets");
     } else {
         res.redirect("/login");
+    }*/
+    const foundUsers = await User.find({"secret": {$ne: null}});
+    if (foundUsers) {
+        res.render("secrets", {userWithSecrets: foundUsers});
     }
 });
 app.get("/logout", (req, res)=>{
@@ -156,6 +162,22 @@ app.post("/login", (req, res)=>{
     }
     */
     // ********** *********** *********** ***********
+});
+app.get("/submit", (req, res)=>{
+    if (req.isAuthenticated()) {
+        res.render("submit");
+    } else {
+        res.redirect("/login");
+    }
+});
+app.post("/submit", async (req, res)=>{
+    const submittedSecret = req.body.secret;
+    const foundUser = await User.findById(req.user.id);
+    if (foundUser) {
+        foundUser.secret = submittedSecret;
+        await foundUser.save();
+        res.redirect("/secrets");
+    }
 });
 // ********** cookie and session part ***********
 passport.serializeUser(function(user, done) {
