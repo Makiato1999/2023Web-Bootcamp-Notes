@@ -1013,5 +1013,8 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    );
    ```
 4. local React environment
+	- check node.js version and update it
+	- ```cd /``` to User directory and find my account, then install the react app by ```npx create-react-app react-app```
+	- ```cd react-app``` then start the react server by ```npm start```
 5. sss
 
