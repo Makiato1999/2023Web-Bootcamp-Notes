@@ -959,4 +959,59 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 ## React.js<a name="anchor_38"></a>
 1. codesandbox, online compile for react
 2. expression and statement in JS
-3. 
+3. import and export simple example
+   - App.jsx
+   ```
+   import React from "react";
+   import Heading from "./Heading";
+   import List from "./List";
+   function App() {
+      return (
+         <div>
+            <Heading />
+            <List />
+         </div>
+      );
+   }
+   export default App;
+   ```
+   - Math.js
+   ```
+   function add(a, b) {
+      return a + b;
+   }
+   function subtract(a, b) {
+      return a - b;
+   }
+   function mutiply(a, b) {
+      return a * b;
+   }
+   function divide(a, b) {
+      return a / b;
+   }
+   export { add, subtract, mutiply, divide };
+   ```
+   - index.js
+   ```
+   import React from "react";
+   import ReactDOM from "react-dom";
+   import App from "./components/App";
+   import * as Calculator from "./math";
+   // import { add, subtract, mutiply, divide } from "./math.js";
+   ...
+   ReactDOM.render(
+      <div>
+         ...
+         <App />
+         ...
+         <ul>
+            <li>a+b = {Calculator.add(a, b)}</li>
+            ...
+         </ul>
+      </div>
+      , document.getElementById("root")
+   );
+   ```
+4. local React environment
+5. sss
+
