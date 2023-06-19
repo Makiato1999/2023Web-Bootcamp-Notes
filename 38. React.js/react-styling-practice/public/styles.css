@@ -1,0 +1,10 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.heading {
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}

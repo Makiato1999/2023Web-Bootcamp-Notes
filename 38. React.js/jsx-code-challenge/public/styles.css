@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.heading {
+  color: royalblue;
+}
+.image {
+  height: 300px;
+  width: 500px;
+}
