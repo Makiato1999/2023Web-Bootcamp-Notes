@@ -1017,7 +1017,7 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- ```cd /``` to User directory and find my account, then install the react app by ```npx create-react-app react-app```
 	- ```cd react-app``` then start the react server by ```npm start```
 5. props
-   - use foreach to traverse
+   - use foreach to traverse, in App.jsx
    ```
    import React from "react";
    let temp = [];
@@ -1050,6 +1050,18 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       );
    }
    export default App;
+   ```
+   - in index.js
+   ```
+   import React from "react";
+   import ReactDOM from "react-dom";
+   import App from "./components/App";
+   import * as contacts from "./contacts";
+
+   ReactDOM.render(
+      <App contacts={contacts.contacts} />
+      , document.getElementById("root")
+   );
    ```
 6. ssss
 
