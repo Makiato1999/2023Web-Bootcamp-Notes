@@ -1016,5 +1016,41 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
 	- check node.js version and update it
 	- ```cd /``` to User directory and find my account, then install the react app by ```npx create-react-app react-app```
 	- ```cd react-app``` then start the react server by ```npm start```
-5. sss
+5. props
+   - use foreach to traverse
+   ```
+   import React from "react";
+   let temp = [];
+   function App(props) {
+      props.contacts.forEach(element => {
+         temp.push(
+               <div>
+                  <div className="card">
+                     <div className="top">
+                           <h2 className="name">{element.name}</h2>
+                           <img className="circle-img" src={element.image} alt="none"></img>
+                     </div>
+                     <div className="bottom">
+                           <p className="info">
+                              {element.email}
+                           </p>
+                           <p className="info">
+                              {element.intro}
+                           </p>
+                     </div>
+                  </div>
+               </div>
+         );
+      });
+      return (
+         <div>
+               <h1 className="heading">Gallery</h1>
+               {temp}
+         </div>
+      );
+   }
+   export default App;
+   ```
+6. ssss
+
 
