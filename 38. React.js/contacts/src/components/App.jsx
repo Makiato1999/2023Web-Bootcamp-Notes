@@ -24,7 +24,8 @@ function App(props) {
     });
     return (
         <div>
-            <h1 className="heading">Gallery</h1>
+            <h1 className="heading">My Gallery Contacts</h1>
+            <Avatar />
             {temp}
         </div>
     );
