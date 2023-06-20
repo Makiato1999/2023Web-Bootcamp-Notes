@@ -1,0 +1,66 @@
+body {
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 25px;
+    max-width: 400px;
+    min-width: 400px;
+    background-color: rgb(208, 218, 223);
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2em;
+    color: #2d3436;
+    margin: 20px 0 30px;
+}
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    padding: 25px 15px;
+    background-color: rgb(171, 222, 247);
+    margin: 50px 0;
+    height: 200px;
+    box-shadow: 10px 10px 10px #727272;
+    text-align: left;
+}
+
+.card .top {
+    border-radius: 25px 25px 0 0;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(169, 206, 255);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.card .top .name {
+    font-size: 2em;
+    color: #2d3436;
+    display: flex;
+    flex: 1;
+    margin: 10% 20px 0;
+}
+
+.card .top img {
+    margin: 30px 20px 0 0;
+}
+
+.card .top .circle-img {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 120px;
+    height: 120px;
+}
+
+.card .bottom {
+    margin-top: 120px;
+}
+
+.card .bottom .info {
+    margin: 20px 0;
+    color: rgb(39, 69, 116);
+}
