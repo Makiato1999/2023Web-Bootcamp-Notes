@@ -1063,6 +1063,25 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       , document.getElementById("root")
    );
    ```
-6. ssss
+6. ES6, JavaScript
+   - map
+   ```
+   const numbers = [1, 2, 3, 4, 5];
+   const doubledNumbers = numbers.map((num) => num * 2);
+   ...output: [2, 4, 6, 8, 10]
+   ```
+   - filter
+   ```
+   const numbers = [1, 2, 3, 4, 5];
+   const evenNumbers = numbers.filter((num) => num % 2 === 0);
+   ...output: [2, 4]
+   ```
+   - reduce
+   ```
+   const numbers = [1, 2, 3, 4, 5];
+   const sum = numbers.reduce((accumulator, num) => accumulator + num, 0);
+   ...output: 15
+   ```
+7. sss
 
 

@@ -1,7 +1,23 @@
 import React from "react";
+import Avatar from "./Avatar";
+import * as contacts from "../contacts";
+import Card from "./Card";
 let temp = [];
 
-function App(props) {
+function createCard(contact) {
+    return (
+        <Card 
+            key={contact.id}
+            name={contact.name}
+            image={contact.image}
+            email={contact.email}
+            intro={contact.intro}
+        />
+    );
+}
+
+function App() {
+    /*
     props.contacts.forEach(element => {
         temp.push(
             <div>
@@ -21,12 +37,11 @@ function App(props) {
                 </div>
             </div>
         );
-    });
+    });*/
     return (
         <div>
             <h1 className="heading">My Gallery Contacts</h1>
-            <Avatar />
-            {temp}
+            {contacts.contacts.map(createCard)}
         </div>
     );
 }
