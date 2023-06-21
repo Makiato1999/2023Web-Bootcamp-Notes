@@ -1082,6 +1082,21 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    const sum = numbers.reduce((accumulator, num) => accumulator + num, 0);
    ...output: 15
    ```
-7. sss
+7. condition
+   - if
+   ```
+   <Input type="password"            placeholder="Password" />
+      {if props.isRegistered === false ? <Input type="confirm_password" placeholder="Confirm Password" /> : null
+      )}
+   ```
+   - AND
+   ```
+   <Input type="password"            placeholder="Password" />
+      {props.isRegistered === false && (
+         <Input type="confirm_password" placeholder="Confirm Password" />
+      )}
+   ```
+8. sss
+
 
 
