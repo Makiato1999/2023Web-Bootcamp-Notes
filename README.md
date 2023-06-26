@@ -1098,7 +1098,32 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
    ```
 8. Javascript ES6 Object & Array Destructuring
 [Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-9. sss
+9. spread operator
+   - Array Spreading:
+   ```
+   const originalArray = [1, 2, 3];
+   const newArray = [...originalArray, 4, 5];
+   console.log(newArray); // Output: [1, 2, 3, 4, 5]
+   ```
+   - Object Spreading:
+   ```
+   const originalObject = { name: 'John', age: 30 };
+   const newObject = { ...originalObject, occupation: 'Developer' };
+   console.log(newObject); // Output: { name: 'John', age: 30, occupation: 'Developer' }
+   ```
+   - Props Spreading:
+   ```
+   const parentProps = { name: 'John', age: 30 };
+   function ChildComponent(props) {
+      return <div>{props.name} is {props.age} years old.</div>;
+   }
+   function ParentComponent() {
+      return <ChildComponent {...parentProps} />;
+   }
+   ```
+10. sss
+
+
 
 
 
