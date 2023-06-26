@@ -1096,7 +1096,9 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
          <Input type="confirm_password" placeholder="Confirm Password" />
       )}
    ```
-8. sss
+8. Javascript ES6 Object & Array Destructuring
+[Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+9. sss
 
 
 
