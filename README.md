@@ -1121,7 +1121,9 @@ _provided by Dr. Angela Yu on Udemy platform_ <br><br>
       return <ChildComponent {...parentProps} />;
    }
    ```
-10. material ui
+10. web dev resources
+   - material ui
+   - transparent textures
 11. 
 
 
