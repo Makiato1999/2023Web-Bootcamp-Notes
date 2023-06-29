@@ -1,12 +1,16 @@
 import React, {useState} from "react";
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
+import Zoom from '@mui/material/Zoom';
+import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 function CreateArea(props) {
     const [note, setNote] = useState({
         title: "",
         content: ""
     });
+
+    const [isExpanded, setIsExpanded] = useState(false);
 
     function handleOnChange(event) {
         //console.log(event.target);
@@ -28,15 +32,29 @@ function CreateArea(props) {
         event.preventDefault();
     }
 
+    function expand() {
+        setIsExpanded(!isExpanded);
+    }
+    
+    const handleClickAway = () => {
+        setIsExpanded(!isExpanded);
+    };
+
     return (
         <div>
-            <form>
-                <input name="title" onChange={handleOnChange} value={note.title} placeholder="title" />
-                <textarea name="content" onChange={handleOnChange} value={note.content} placeholder="take a note..." rows="3" />
-                <Fab size="small" color="primary" aria-label="add">
-                    <AddIcon onClick={handleOnClick} />
-                </Fab>
+        <ClickAwayListener onClickAway={handleClickAway}>
+        <form className="create-note">
+                {
+                    isExpanded === true && (<input name="title" onChange={handleOnChange} value={note.title} placeholder="title" />)
+                }
+                <textarea name="content" onClick={expand} onChange={handleOnChange} value={note.content} placeholder="take a note..." rows={isExpanded === true ? 3:1} />
+                <Zoom in={isExpanded}>
+                    <Fab onClick={handleOnClick} >
+                        <AddIcon />
+                    </Fab>
+                </Zoom>
             </form>
+        </ClickAwayListener>
         </div>
     );
 }
